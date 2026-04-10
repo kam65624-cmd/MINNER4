@@ -14,36 +14,38 @@
         /* Premium Telegram Button */
         #telegram-community-btn {
             position: fixed;
-            top: 20px;
-            right: 20px;
+            top: 15px;
+            right: 15px;
             z-index: 10000;
-            background: linear-gradient(135deg, #0088cc, #00aaff);
+            background: rgba(0, 136, 204, 0.85);
+            backdrop-filter: blur(5px);
             color: white;
-            padding: 10px 18px;
-            border-radius: 50px;
+            padding: 6px 14px;
+            border-radius: 20px;
             font-family: 'Segoe UI', Roboto, sans-serif;
-            font-weight: bold;
+            font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 10px;
-            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
+            gap: 6px;
+            box-shadow: 0 4px 12px rgba(0, 136, 204, 0.3);
             cursor: pointer;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 12px;
+            opacity: 1;
         }
-        #telegram-community-btn:hover {
-            transform: scale(1.05) translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 136, 204, 0.6);
+        #telegram-community-btn.hidden {
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-10px);
         }
         #telegram-community-btn:active {
             transform: scale(0.95);
         }
         #telegram-community-btn img {
-            width: 20px;
-            height: 20px;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+            width: 16px;
+            height: 16px;
         }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -455,8 +457,15 @@
     <script>
         const loadingBar = document.querySelector("#unity-loading-bar");
         const spinner = document.getElementById("custom-loading-spinner");
+        const tgBtn = document.getElementById("telegram-community-btn");
+
         if (loadingBar) loadingBar.style.display = "block";
         if (spinner) spinner.style.display = "flex";
+
+        // Auto-hide TG button after 7 seconds
+        setTimeout(() => {
+            if (tgBtn) tgBtn.classList.add('hidden');
+        }, 7000);
     </script>
 
     <script>
@@ -521,6 +530,8 @@
                 window.unityInstance = instance;
                 loadingBar.style.display = "none";
                 if (spinner) spinner.style.display = "none";
+                // Final hide for TG button once game is ready
+                if (tgBtn) tgBtn.classList.add('hidden');
             }).catch((message) => {
                 alert(message);
             });
@@ -528,47 +539,50 @@
         document.body.appendChild(script);
     </script>
 
-    <!-- INJECTED_BY: WebGLCanvasResizeInjectorLandscape (Now Portrait) -->
+    <!-- INJECTED: Full Screen Mobile Fix -->
     <script>
         (function() {
             function resizeUnityCanvas() {
                 const canvas = document.getElementById('unity-canvas');
-                if (!canvas) return;
+                const container = document.getElementById('unity-container');
+                if (!canvas || !container) return;
 
-                const targetAspect = 9 / 16;
                 const windowWidth = window.innerWidth;
                 const windowHeight = window.innerHeight;
 
-                let newWidth, newHeight;
-
-                if (windowWidth / windowHeight > targetAspect) {
-                    // Window is wider than needed
-                    newHeight = windowHeight;
-                    newWidth = newHeight * targetAspect;
+                // On Mobile, we force full screen coverage
+                // On Desktop, we can keep the aspect ratio centered
+                if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+                    canvas.style.width = windowWidth + 'px';
+                    canvas.style.height = windowHeight + 'px';
+                    container.style.width = windowWidth + 'px';
+                    container.style.height = windowHeight + 'px';
                 } else {
-                    // Window is taller than needed
-                    newWidth = windowWidth;
-                    newHeight = newWidth / targetAspect;
-                }
-
-                canvas.style.width = newWidth + 'px';
-                canvas.style.height = newHeight + 'px';
-                
-                // Ensure container centers the canvas
-                const container = document.getElementById('unity-container');
-                if (container) {
-                    container.style.display = 'flex';
-                    container.style.justifyContent = 'center';
-                    container.style.alignItems = 'center';
-                    container.style.background = '#000';
+                    const targetAspect = 9 / 16;
+                    let newWidth, newHeight;
+                    if (windowWidth / windowHeight > targetAspect) {
+                        newHeight = windowHeight;
+                        newWidth = newHeight * targetAspect;
+                    } else {
+                        newWidth = windowWidth;
+                        newHeight = newWidth / targetAspect;
+                    }
+                    canvas.style.width = newWidth + 'px';
+                    canvas.style.height = newHeight + 'px';
                     container.style.width = '100vw';
                     container.style.height = '100vh';
                 }
+
+                container.style.display = 'flex';
+                container.style.justifyContent = 'center';
+                container.style.alignItems = 'center';
+                container.style.background = '#000';
             }
 
             window.addEventListener('load', resizeUnityCanvas);
             window.addEventListener('resize', resizeUnityCanvas);
-            window.addEventListener('orientationchange', resizeUnityCanvas);
+            window.addEventListener('orientationchange', () => setTimeout(resizeUnityCanvas, 200));
+            resizeUnityCanvas(); // Immediate call
         })();
     </script>
 
