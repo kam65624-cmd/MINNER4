@@ -49,12 +49,24 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
         window.unityInstance = null;
-        // Mock Ads Config to prevent JSInitializeAds crash
+
+        // --- COMPREHENSIVE ADS MOCK (Prevents Unity Crashes) ---
         window.adConfig = {
-            ad_units: [],
             is_enabled: false,
-            provider: 'none'
+            provider: "none",
+            ad_units: { interstitial: "none", rewarded: "none" }
         };
+        var adConfig = window.adConfig; // Double-guard global variable
+
+        // Mock Ad Functions expected by Unity Plugins
+        window.JSInitializeAds = function() { console.log("Ads System: MOCKED"); return true; };
+        window.JSShowInterstitial = function() { console.log("Ads: Interstitial Blocked"); return false; };
+        window.JSShowRewarded = function() { console.log("Ads: Rewarded Blocked"); return false; };
+        window.JSIsInterstitialReady = function() { return false; };
+        window.JSIsRewardedReady = function() { return false; };
+        window.HAS_ADS = false;
+        // -------------------------------------------------------
+
         // Mock Telegram for Desktop
         if (!window.Telegram || !window.Telegram.WebApp || !window.Telegram.WebApp.initDataUnsafe.user) {
             window.Telegram = window.Telegram || {};
