@@ -14,38 +14,33 @@
         /* Premium Telegram Button */
         #telegram-community-btn {
             position: fixed;
-            top: 15px;
-            right: 15px;
+            top: 10px;
+            left: 10px; /* Moved to Left */
             z-index: 10000;
-            background: rgba(0, 136, 204, 0.85);
-            backdrop-filter: blur(5px);
-            color: white;
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-family: 'Segoe UI', Roboto, sans-serif;
-            font-weight: 600;
+            background: rgba(0, 0, 0, 0.5); /* Darker and more subtle */
+            backdrop-filter: blur(4px);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-family: sans-serif;
+            font-size: 11px;
             display: flex;
             align-items: center;
-            gap: 6px;
-            box-shadow: 0 4px 12px rgba(0, 136, 204, 0.3);
+            gap: 5px;
             cursor: pointer;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.5s ease;
             text-decoration: none;
-            font-size: 12px;
             opacity: 1;
         }
         #telegram-community-btn.hidden {
-            opacity: 0;
-            pointer-events: none;
-            transform: translateY(-10px);
-        }
-        #telegram-community-btn:active {
-            transform: scale(0.95);
+            opacity: 0 !important;
+            visibility: hidden;
+            transform: translateX(-20px);
         }
         #telegram-community-btn img {
-            width: 16px;
-            height: 16px;
+            width: 14px;
+            height: 14px;
         }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -429,8 +424,8 @@
         Join Community
     </a>
 
-    <div id="unity-container">
-        <canvas id="unity-canvas" width=540 height=960 tabindex="-1"></canvas>
+    <div id="unity-container" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #000;">
+        <canvas id="unity-canvas" style="width: 100%; height: 100%; display: block;"></canvas>
 
         <div id="unity-loading-bar">
             <div id="unity-logo">
@@ -539,7 +534,7 @@
         document.body.appendChild(script);
     </script>
 
-    <!-- INJECTED: Full Screen Mobile Fix -->
+    <!-- INJECTED: Absolute Full Screen Fix -->
     <script>
         (function() {
             function resizeUnityCanvas() {
@@ -547,42 +542,20 @@
                 const container = document.getElementById('unity-container');
                 if (!canvas || !container) return;
 
-                const windowWidth = window.innerWidth;
-                const windowHeight = window.innerHeight;
-
-                // On Mobile, we force full screen coverage
-                // On Desktop, we can keep the aspect ratio centered
-                if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-                    canvas.style.width = windowWidth + 'px';
-                    canvas.style.height = windowHeight + 'px';
-                    container.style.width = windowWidth + 'px';
-                    container.style.height = windowHeight + 'px';
-                } else {
-                    const targetAspect = 9 / 16;
-                    let newWidth, newHeight;
-                    if (windowWidth / windowHeight > targetAspect) {
-                        newHeight = windowHeight;
-                        newWidth = newHeight * targetAspect;
-                    } else {
-                        newWidth = windowWidth;
-                        newHeight = newWidth / targetAspect;
-                    }
-                    canvas.style.width = newWidth + 'px';
-                    canvas.style.height = newHeight + 'px';
-                    container.style.width = '100vw';
-                    container.style.height = '100vh';
-                }
-
-                container.style.display = 'flex';
-                container.style.justifyContent = 'center';
-                container.style.alignItems = 'center';
-                container.style.background = '#000';
+                // Force 100% of viewport
+                canvas.style.width = '100vw';
+                canvas.style.height = '100vh';
+                container.style.width = '100vw';
+                container.style.height = '100vh';
             }
 
             window.addEventListener('load', resizeUnityCanvas);
             window.addEventListener('resize', resizeUnityCanvas);
-            window.addEventListener('orientationchange', () => setTimeout(resizeUnityCanvas, 200));
-            resizeUnityCanvas(); // Immediate call
+            window.addEventListener('orientationchange', () => setTimeout(resizeUnityCanvas, 100));
+            
+            // Immediate resize
+            setInterval(resizeUnityCanvas, 1000); 
+            resizeUnityCanvas();
         })();
     </script>
 
