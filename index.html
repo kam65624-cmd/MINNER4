@@ -49,6 +49,12 @@
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
         window.unityInstance = null;
+        // Mock Ads Config to prevent JSInitializeAds crash
+        window.adConfig = {
+            ad_units: [],
+            is_enabled: false,
+            provider: 'none'
+        };
         // Mock Telegram for Desktop
         if (!window.Telegram || !window.Telegram.WebApp || !window.Telegram.WebApp.initDataUnsafe.user) {
             window.Telegram = window.Telegram || {};
