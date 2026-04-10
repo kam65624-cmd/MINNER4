@@ -1,0 +1,16 @@
+{
+  "name": "Idle Miner Tycoon Gold Games",
+  "short_name": "Idle Miner",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "description": "Idle Miner Tycoon Gold Games WebGL version",
+  "icons": [
+    {
+      "src": "TemplateData/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ]
+}

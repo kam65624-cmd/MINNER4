@@ -1,0 +1,10 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Unity WebGL binary files - never modify
+*.data binary
+*.wasm binary
+*.br binary
+*.unityweb binary
+Build/*.js binary
+Build/*.framework.js binary

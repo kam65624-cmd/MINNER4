@@ -1,0 +1,1998 @@
+{
+  "version": 3,
+  "last_updated": "2026-01-09",
+  "publisher": "MadKidGames",
+  "flags": {
+    "debug_logs": true,
+    "enforce_domain_check": false,
+    "enforce_game_whitelist": false,
+    "redirect_on_reject": false,
+	
+	"auto_interstitial": {
+	"first_delay": 999999,
+	"repeat_interval": 999999,
+	"countdown_seconds": 0,
+	"break_seconds": 999999
+		
+}
+},
+  "allowed_domains": ["madkidgames.com", "www.madkidgames.com", "cdn.madkidgames.com"],
+  
+  "whitelisted_games": [
+    {
+      "game_enum": "PEPI_WONDER_WORLD_MAGIC_ISLE",
+      "game_name": "Pepi Wonder World: Magic Isle!",
+      "original_game_url": "https://www.madkidgames.com/game/pepi-wonder-world-magic-isle"
+    },
+    {
+      "game_enum": "BEAT_THE_BOSS_2",
+      "game_name": "Beat the Boss 2",
+      "original_game_url": "https://www.madkidgames.com/game/beat-the-boss-2"
+    },
+    {
+      "game_enum": "BUS_SIMULATOR_PRO_2",
+      "game_name": "Bus Simulator PRO 2",
+      "original_game_url": "https://www.madkidgames.com/game/bus-simulator-pro-2"
+    },
+    {
+      "game_enum": "TRUCKERS_OF_EUROPE",
+      "game_name": "Truckers of Europe",
+      "original_game_url": "https://www.madkidgames.com/game/truckers-of-europe"
+    },
+    {
+      "game_enum": "CAR_GAMES_FOR_TODDLERS_AND_KIDS",
+      "game_name": "Car Games For Toddlers & Kids",
+      "original_game_url": "https://www.madkidgames.com/game/car-games-for-toddlers-and-kids"
+    },
+    {
+      "game_enum": "CONSTRUCTION_CITY_2",
+      "game_name": "Construction City 2",
+      "original_game_url": "https://www.madkidgames.com/game/construction-city-2"
+    },
+    {
+      "game_enum": "2_FOR_2_CONNECT_THE_NUMBERS",
+      "game_name": "2 For 2: Connect the Numbers",
+      "original_game_url": "https://www.madkidgames.com/game/2-for-2-connect-the-numbers"
+    },
+    {
+      "game_enum": "1010_BLOCK_PUZZLE_GAME",
+      "game_name": "1010! Block Puzzle Game",
+      "original_game_url": "https://www.madkidgames.com/game/1010-block-puzzle-game"
+    },
+    {
+      "game_enum": "COLOR_ROAD",
+      "game_name": "Color Road",
+      "original_game_url": "https://www.madkidgames.com/game/color-road"
+    },
+    {
+      "game_enum": "COLOR_BUMP_3D_ASMR_BALL_GAME",
+      "game_name": "Color Bump 3D: ASMR Ball Game",
+      "original_game_url": "https://www.madkidgames.com/game/color-bump-3d-asmr-ball-game"
+    },
+    {
+      "game_enum": "IDLE_MINER_TYCOON_GOLD_GAMES",
+      "game_name": "Idle Miner Tycoon: Gold Games",
+      "original_game_url": "https://www.madkidgames.com/game/idle-miner-tycoon-gold-games"
+    },
+    {
+      "game_enum": "TRUCK_SIMULATOR_PRO_2",
+      "game_name": "Truck Simulator PRO 2",
+      "original_game_url": "https://www.madkidgames.com/game/truck-simulator-pro-2"
+    },
+    {
+      "game_enum": "BOTTLE_FLIP_3D_TAP_AND_JUMP",
+      "game_name": "Bottle Flip 3D — Tap & Jump!",
+      "original_game_url": "https://www.madkidgames.com/game/bottle-flip-3d-tap-and-jump"
+    },
+    {
+      "game_enum": "PEGIDLE",
+      "game_name": "PegIdle",
+      "original_game_url": "https://www.madkidgames.com/game/pegidle"
+    },
+    {
+      "game_enum": "HOLYDAY_CITY_TYCOON",
+      "game_name": "Holyday City Tycoon",
+      "original_game_url": "https://www.madkidgames.com/game/holyday-city-tycoon"
+    },
+    {
+      "game_enum": "FOOD_FIGHTER_CLICKER_GAMES",
+      "game_name": "Food Fighter Clicker Games",
+      "original_game_url": "https://www.madkidgames.com/game/food-fighter-clicker-games"
+    },
+    {
+      "game_enum": "KIWI_CLICKER_JUICED_UP",
+      "game_name": "Kiwi Clicker - Juiced Up",
+      "original_game_url": "https://www.madkidgames.com/game/kiwi-clicker-juiced-up"
+    },
+    {
+      "game_enum": "BEAT_THE_BOSS_4",
+      "game_name": "Beat the Boss 4",
+      "original_game_url": "https://www.madkidgames.com/game/beat-the-boss-4"
+    },
+    {
+      "game_enum": "SAMURAI_II_VENGEANCE",
+      "game_name": "Samurai II: Vengeance",
+      "original_game_url": "https://www.madkidgames.com/game/samurai-ii-vengeance"
+    },
+    {
+      "game_enum": "ELITE_TRIALS",
+      "game_name": "Elite Trials",
+      "original_game_url": "https://www.madkidgames.com/game/elite-trials"
+    },
+    {
+      "game_enum": "TRUCKERS_OF_EUROPE_2",
+      "game_name": "Truckers of Europe 2",
+      "original_game_url": "https://www.madkidgames.com/game/truckers-of-europe-2"
+    },
+    {
+      "game_enum": "BUS_SIMULATOR_17",
+      "game_name": "Bus Simulator 17",
+      "original_game_url": "https://www.madkidgames.com/game/bus-simulator-17"
+    },
+    {
+      "game_enum": "GX_RACING",
+      "game_name": "GX Racing",
+      "original_game_url": "https://www.madkidgames.com/game/gx-racing"
+    },
+    {
+      "game_enum": "MERGE_CAKE_MERGE_COOKING",
+      "game_name": "Merge Cake - Merge Cooking",
+      "original_game_url": "https://www.madkidgames.com/game/merge-cake-merge-cooking"
+    },
+    {
+      "game_enum": "BIKE_UP",
+      "game_name": "Bike Up!",
+      "original_game_url": "https://www.madkidgames.com/game/bike-up"
+    },
+    {
+      "game_enum": "SMASHY_ROAD_WANTED",
+      "game_name": "Smashy Road: Wanted",
+      "original_game_url": "https://www.madkidgames.com/game/smashy-road-wanted"
+    },
+    {
+      "game_enum": "AIRPLANE_FLIGHT_SIMULATOR_EVO",
+      "game_name": "Airplane Flight Simulator EVO",
+      "original_game_url": "https://www.madkidgames.com/game/airplane-flight-simulator-evo"
+    },
+    {
+      "game_enum": "SHIP_SIMULATOR_19",
+      "game_name": "Ship Simulator 19",
+      "original_game_url": "https://www.madkidgames.com/game/ship-simulator-19"
+    },
+    {
+      "game_enum": "KEEP_ON_MINING",
+      "game_name": "Keep On Mining",
+      "original_game_url": "https://www.madkidgames.com/game/keep-on-mining"
+    },
+    {
+      "game_enum": "HEROES_OF_CHESS",
+      "game_name": "Heroes of Chess",
+      "original_game_url": "https://www.madkidgames.com/game/heroes-of-chess"
+    },
+	{
+      "game_enum": "HIGH_SCHOOL_CHEATING_BOY_CHEATER_BOB_SCHOOL_GAMES",
+      "game_name": "High School Cheating Boy Cheater Bob School Games",
+      "original_game_url": "https://www.madkidgames.com/game/high-school-cheating-boy-cheater-bob-school-games"
+    },
+    {
+      "game_enum": "STICK_WAR_LEGACY",
+      "game_name": "Stick War: Legacy",
+      "original_game_url": "https://www.madkidgames.com/game/stick-war-legacy"
+    },
+    {
+      "game_enum": "CAT_RUNNER_DECORATE_HOME",
+      "game_name": "Cat Runner: Decorate Home",
+      "original_game_url": "https://www.madkidgames.com/game/cat-runner-decorate-home"
+    },
+    {
+      "game_enum": "SUBWAY_PRINCESS_RUNNER",
+      "game_name": "Subway Princess Runner",
+      "original_game_url": "https://www.madkidgames.com/game/subway-princess-runner"
+    },
+    {
+      "game_enum": "MOUNTAIN_CLIMB_4X4_CAR_DRIVE",
+      "game_name": "Mountain Climb 4x4 : Car Drive",
+      "original_game_url": "https://www.madkidgames.com/game/mountain-climb-4x4-car-drive"
+    },
+    {
+      "game_enum": "NUCLEAR_POWER_REACTOR_INC_IN",
+      "game_name": "Nuclear Power Reactor INC - IN",
+      "original_game_url": "https://www.madkidgames.com/game/nuclear-power-reactor-inc-in"
+    },
+    {
+      "game_enum": "SUBMARINE_WAR_SUBMARINE_GAMES",
+      "game_name": "Submarine War: Submarine Games",
+      "original_game_url": "https://www.madkidgames.com/game/submarine-war-submarine-games"
+    },
+    {
+      "game_enum": "FARM_SIMULATOR_EVO",
+      "game_name": "Farm Simulator: Evo",
+      "original_game_url": "https://www.madkidgames.com/game/farm-simulator-evo"
+    },
+    {
+      "game_enum": "TRAIN_DRIVER_2018",
+      "game_name": "Train Driver 2018",
+      "original_game_url": "https://www.madkidgames.com/game/train-driver-2018"
+    },
+    {
+      "game_enum": "EURO_TRUCK_DRIVER_2018",
+      "game_name": "Euro Truck Driver 2018",
+      "original_game_url": "https://www.madkidgames.com/game/euro-truck-driver-2018"
+    },
+    {
+      "game_enum": "TRUCK_SIMULATOR_USA_CLASSIC",
+      "game_name": "Truck Simulator USA : Classic",
+      "original_game_url": "https://www.madkidgames.com/game/truck-simulator-usa-classic"
+    },
+    {
+      "game_enum": "CHEATING_IN_SCHOOL",
+      "game_name": "Cheating In School",
+      "original_game_url": "https://www.madkidgames.com/game/cheating-in-school"
+    },
+    {
+      "game_enum": "COACH_BUS_SIMULATOR",
+      "game_name": "Coach Bus Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/coach-bus-simulator"
+    },
+    {
+      "game_enum": "EUROPEAN_TRUCK_SIMULATOR",
+      "game_name": "European Truck Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/european-truck-simulator"
+    },
+    {
+      "game_enum": "BOB_THE_ROBBER_4",
+      "game_name": "Bob The Robber 4",
+      "original_game_url": "https://www.madkidgames.com/game/bob-the-robber-4"
+    },
+    {
+      "game_enum": "CAR_EATS_CAR_3_SURVIVAL_RACING",
+      "game_name": "Car Eats Car 3 Survival Racing",
+      "original_game_url": "https://www.madkidgames.com/game/car-eats-car-3-survival-racing"
+    },
+    {
+      "game_enum": "CAR_EATS_CAR_2_RACING_GAME",
+      "game_name": "Car Eats Car 2 - Racing Game",
+      "original_game_url": "https://www.madkidgames.com/game/car-eats-car-2-racing-game"
+    },
+    {
+      "game_enum": "EURO_TRUCK_DRIVER_18_TRUCKERS_WANTED",
+      "game_name": "Euro Truck Driver 18 - Truckers Wanted",
+      "original_game_url": "https://www.madkidgames.com/game/euro-truck-driver-18-truckers-wanted"
+    },
+    {
+      "game_enum": "COACH_BUS_SIMULATOR_17",
+      "game_name": "Coach Bus Simulator 17",
+      "original_game_url": "https://www.madkidgames.com/game/coach-bus-simulator-17"
+    },
+    {
+      "game_enum": "BUS_SIMULATOR_ULTIMATE",
+      "game_name": "Bus Simulator : Ultimate",
+      "original_game_url": "https://www.madkidgames.com/game/bus-simulator-ultimate"
+    },
+    {
+      "game_enum": "DOCTOR_DASH_HOSPITAL_GAME",
+      "game_name": "Doctor Dash : Hospital Game",
+      "original_game_url": "https://www.madkidgames.com/game/doctor-dash-hospital-game"
+    },
+    {
+      "game_enum": "DOCTOR_911_HOSPITAL_SIMULATOR",
+      "game_name": "Doctor 911 Hospital Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/doctor-911-hospital-simulator"
+    },
+    {
+      "game_enum": "ART_BY_NUMBERS_12",
+      "game_name": "Art By Numbers 12",
+      "original_game_url": "https://www.madkidgames.com/game/art-by-numbers-12"
+    },
+    {
+      "game_enum": "ART_BY_NUMBERS_11",
+      "game_name": "Art By Numbers 11",
+      "original_game_url": "https://www.madkidgames.com/game/art-by-numbers-11"
+    },
+    {
+      "game_enum": "DREAMLAND_SOLITAIRE",
+      "game_name": "Dreamland Solitaire",
+      "original_game_url": "https://www.madkidgames.com/game/dreamland-solitaire-fantasy-card-game"
+    },
+    {
+      "game_enum": "EMERLAND_SOLITAIRE_2_CARD_GAME",
+      "game_name": "Emerland Solitaire 2 Card Game",
+      "original_game_url": "https://www.madkidgames.com/game/emerland-solitaire-2-card-game"
+    },
+    {
+      "game_enum": "ART_BY_NUMBERS_10",
+      "game_name": "Art By Numbers 10",
+      "original_game_url": "https://www.madkidgames.com/game/art-by-numbers-10"
+    },
+    {
+      "game_enum": "ART_BY_NUMBERS_9",
+      "game_name": "Art By Numbers 9",
+      "original_game_url": "https://www.madkidgames.com/game/art-by-numbers-9"
+    },
+    {
+      "game_enum": "ART_BY_NUMBERS_8",
+      "game_name": "Art By Numbers 8",
+      "original_game_url": "https://www.madkidgames.com/game/art-by-numbers-8"
+    },
+    {
+      "game_enum": "ART_BY_NUMBERS_7",
+      "game_name": "Art By Numbers 7",
+      "original_game_url": "https://www.madkidgames.com/game/art-by-numbers-7"
+    },
+    {
+      "game_enum": "ART_BY_NUMBERS_6",
+      "game_name": "Art By Numbers 6",
+      "original_game_url": "https://www.madkidgames.com/game/art-by-numbers-6"
+    },
+    {
+      "game_enum": "ART_BY_NUMBERS_5",
+      "game_name": "Art By Numbers 5",
+      "original_game_url": "https://www.madkidgames.com/game/art-by-numbers-5"
+    },
+    {
+      "game_enum": "ART_BY_NUMBERS_4",
+      "game_name": "Art By Numbers 4",
+      "original_game_url": "https://www.madkidgames.com/game/art-by-numbers-4"
+    },
+    {
+      "game_enum": "ART_BY_NUMBERS_3",
+      "game_name": "Art By Numbers 3",
+      "original_game_url": "https://www.madkidgames.com/game/art-by-numbers-3"
+    },
+    {
+      "game_enum": "ART_BY_NUMBERS_2",
+      "game_name": "Art By Numbers 2",
+      "original_game_url": "https://www.madkidgames.com/game/art-by-numbers-2"
+    },
+    {
+      "game_enum": "ART_BY_NUMBERS",
+      "game_name": "Art By Numbers",
+      "original_game_url": "https://www.madkidgames.com/game/art-by-numbers"
+    },
+    {
+      "game_enum": "EPIC_SKATER_2",
+      "game_name": "Epic Skater 2",
+      "original_game_url": "https://www.madkidgames.com/game/epic-skater-2"
+    },
+    {
+      "game_enum": "TRUCK_SIMULATOR_EUROPE",
+      "game_name": "Truck Simulator : Europe",
+      "original_game_url": "https://www.madkidgames.com/game/truck-simulator-europe"
+    },
+    {
+      "game_enum": "TRUCK_SIMULATOR_17",
+      "game_name": "Truck Simulator 17",
+      "original_game_url": "https://www.madkidgames.com/game/truck-simulator-17"
+    },
+    {
+      "game_enum": "SMASHY_DRIFT_RACING",
+      "game_name": "Smashy Drift Racing",
+      "original_game_url": "https://www.madkidgames.com/game/smashy-drift-racing"
+    },
+    {
+      "game_enum": "SAFE_ZONE",
+      "game_name": "Safe Zone!",
+      "original_game_url": "https://www.madkidgames.com/game/safe-zone"
+    },
+    {
+      "game_enum": "GHOST_POP",
+      "game_name": "Ghost Pop!",
+      "original_game_url": "https://www.madkidgames.com/game/ghost-pop"
+    },
+    {
+      "game_enum": "FISHY_BITS_2",
+      "game_name": "Fishy Bits 2",
+      "original_game_url": "https://www.madkidgames.com/game/fishy-bits-2"
+    },
+    {
+      "game_enum": "DRIFT_IT",
+      "game_name": "Drift It!",
+      "original_game_url": "https://www.madkidgames.com/game/drift-it"
+    },
+    {
+      "game_enum": "TENNIS_BITS",
+      "game_name": "Tennis Bits",
+      "original_game_url": "https://www.madkidgames.com/game/tennis-bits"
+    },
+    {
+      "game_enum": "MR_MEAT_HORROR_ESCAPE_ROOM",
+      "game_name": "Mr Meat Horror Escape Room",
+      "original_game_url": "https://www.madkidgames.com/game/mr-meat-horror-escape-room"
+    },
+    {
+      "game_enum": "EVIL_NUN_HORROR_AT_SCHOOL",
+      "game_name": "Evil Nun Horror at School",
+      "original_game_url": "https://www.madkidgames.com/game/evil-nun-horror-at-school"
+    },
+    {
+      "game_enum": "TOCA_BOCA_LIFE_TOWN",
+      "game_name": "Toca Boca Life: Town",
+      "original_game_url": "https://www.madkidgames.com/game/toca-boca-life-town"
+    },
+    {
+      "game_enum": "ROCKET_CAR_BALL",
+      "game_name": "Rocket Car Ball",
+      "original_game_url": "https://www.madkidgames.com/game/rocket-car-ball"
+    },
+    {
+      "game_enum": "SECURITY_SIMULATOR",
+      "game_name": "Security Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/security-simulator"
+    },
+    {
+      "game_enum": "BOSSY_BALL_5_BOUNCE_JUMP_ROLL",
+      "game_name": "Bossy Ball 5: Bounce Jump Roll",
+      "original_game_url": "https://www.madkidgames.com/game/bossy-ball-5-bounce-jump-roll"
+    },
+    {
+      "game_enum": "RED_HERO_2_BALL_ADVENTURE_GAME",
+      "game_name": "Red Hero 2 Ball Adventure Game",
+      "original_game_url": "https://www.madkidgames.com/game/red-hero-2-ball-adventure-game"
+    },
+    {
+      "game_enum": "GRANNY",
+      "game_name": "Granny",
+      "original_game_url": "https://www.madkidgames.com/game/granny"
+    },
+    {
+      "game_enum": "PARKOUR_JUMP",
+      "game_name": "Parkour Jump",
+      "original_game_url": "https://www.madkidgames.com/game/parkour-jump"
+    },
+    {
+      "game_enum": "LUCKY_LIFE",
+      "game_name": "Lucky Life",
+      "original_game_url": "https://www.madkidgames.com/game/lucky-life"
+    },
+    {
+      "game_enum": "WORD_SEARCH_WORD_PUZZLE",
+      "game_name": "Word Search Word Puzzle",
+      "original_game_url": "https://www.madkidgames.com/game/word-search-word-puzzle"
+    },
+    {
+      "game_enum": "POLICE_CAR_CHASE_COP_SIMULATOR",
+      "game_name": "Police Car Chase Cop Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/police-car-chase-cop-simulator"
+    },
+    {
+      "game_enum": "DEMOLITION_DERBY_2",
+      "game_name": "Demolition Derby 2",
+      "original_game_url": "https://www.madkidgames.com/game/demolition-derby-2"
+    },
+    {
+      "game_enum": "LAST_DAY_ON_EARTH_SURVIVAL",
+      "game_name": "Last Day On Earth Survival",
+      "original_game_url": "https://www.madkidgames.com/game/last-day-on-earth-survival"
+    },
+    {
+      "game_enum": "CAR_PARKING_PRO_PARK_AND_DRIVE",
+      "game_name": "Car Parking Pro Park And Drive",
+      "original_game_url": "https://www.madkidgames.com/game/car-parking-pro-park-and-drive"
+    },
+    {
+      "game_enum": "SHORT_RIDE",
+      "game_name": "Short Ride",
+      "original_game_url": "https://www.madkidgames.com/game/short-ride"
+    },
+    {
+      "game_enum": "SHORT_LIFE",
+      "game_name": "Short Life",
+      "original_game_url": "https://www.madkidgames.com/game/short-life"
+    },
+    {
+      "game_enum": "TOWER_DEFENSE_DEFENSE_LEGEND",
+      "game_name": "Tower Defense Defense Legend",
+      "original_game_url": "https://www.madkidgames.com/game/tower-defense-defense-legend"
+    },
+    {
+      "game_enum": "RACE_MAX_ULTIMATE_RACING_GAME",
+      "game_name": "Race Max Ultimate Racing Game",
+      "original_game_url": "https://www.madkidgames.com/game/race-max-ultimate-racing-game"
+    },
+    {
+      "game_enum": "FLAT_ZOMBIES_DEFENSE_AND_CLEANUP",
+      "game_name": "Flat Zombies Defense And Cleanup",
+      "original_game_url": "https://www.madkidgames.com/game/flat-zombies-defense-and-cleanup"
+    },
+    {
+      "game_enum": "SCARY_NEIGHBOR_3D",
+      "game_name": "Scary Neighbor 3d",
+      "original_game_url": "https://www.madkidgames.com/game/scary-neighbor-3d"
+    },
+    {
+      "game_enum": "OFFROAD_OUTLAWS",
+      "game_name": "Offroad Outlaws",
+      "original_game_url": "https://www.madkidgames.com/game/offroad-outlaws"
+    },
+    {
+      "game_enum": "STICKMAN_RACER_SURVIVAL_ZOMBIE",
+      "game_name": "Stickman Racer Survival Zombie",
+      "original_game_url": "https://www.madkidgames.com/game/stickman-racer-survival-zombie"
+    },
+    {
+      "game_enum": "CAR_CRASH_PARKOUR_DEMOLITION",
+      "game_name": "Car Crash Parkour Demolition",
+      "original_game_url": "https://www.madkidgames.com/game/car-crash-parkour-demolition"
+    },
+    {
+      "game_enum": "STUNT_BIKE_EXTREME",
+      "game_name": "Stunt Bike Extreme",
+      "original_game_url": "https://www.madkidgames.com/game/stunt-bike-extreme"
+    },
+    {
+      "game_enum": "ROVERCRAFT_RACE_YOUR_SPACE_CAR",
+      "game_name": "Rovercraft Race Your Space Car",
+      "original_game_url": "https://www.madkidgames.com/game/rovercraft-race-your-space-car"
+    },
+    {
+      "game_enum": "GROW_CASTLE_TOWER_DEFENSE",
+      "game_name": "Grow Castle Tower Defense",
+      "original_game_url": "https://www.madkidgames.com/game/grow-castle-tower-defense"
+    },
+    {
+      "game_enum": "ZOMBIE_HILL_RACING_EARN_CLIMB",
+      "game_name": "Zombie Hill Racing Earn Climb",
+      "original_game_url": "https://www.madkidgames.com/game/zombie-hill-racing-earn-climb"
+    },
+    {
+      "game_enum": "COLOR_ESCAPE_UNBLOCK_JAM",
+      "game_name": "Color Escape Unblock Jam",
+      "original_game_url": "https://www.madkidgames.com/game/color-escape-unblock-jam"
+    },
+    {
+      "game_enum": "SURGEON_DOCTOR_VIRTUAL_JOB_SIMULATOR",
+      "game_name": "Surgeon Doctor Virtual Job Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/surgeon-doctor-virtual-job-simulator"
+    },
+    {
+      "game_enum": "RAILROAD_MADNESS_XTREME_HILL_CLIMB_OFFROAD_RACING",
+      "game_name": "Railroad Madness Xtreme Hill Climb Offroad Racing",
+      "original_game_url": "https://www.madkidgames.com/game/railroad-madness-xtreme-hill-climb-offroad-racing"
+    },
+    {
+      "game_enum": "LEGENDARY_UNICORN_SIMULATOR",
+      "game_name": "Legendary Unicorn Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/legendary-unicorn-simulator"
+    },
+    {
+      "game_enum": "BEAT_THE_BOSS_3",
+      "game_name": "Beat The Boss 3",
+      "original_game_url": "https://www.madkidgames.com/game/beat-the-boss-3"
+    },
+    {
+      "game_enum": "MAGIC_SIEGE_CASTLE_DEFENDER",
+      "game_name": "Magic Siege Castle Defender",
+      "original_game_url": "https://www.madkidgames.com/game/magic-siege-castle-defender"
+    },
+    {
+      "game_enum": "JUNGLE_HILL_CLIMB_RACING",
+      "game_name": "Jungle Hill Climb Racing",
+      "original_game_url": "https://www.madkidgames.com/game/jungle-hill-climb-racing"
+    },
+    {
+      "game_enum": "HILL_CLIMB_RACING_2_ADVENTURE_GAME",
+      "game_name": "Hill Climb Racing 2 Adventure Game",
+      "original_game_url": "https://www.madkidgames.com/game/hill-climb-racing-2-adventure-game"
+    },
+    {
+      "game_enum": "HILL_CLIMB_RACING_ADVENTURE",
+      "game_name": "Hill Climb Racing Adventure",
+      "original_game_url": "https://www.madkidgames.com/game/hill-climb-racing-adventure"
+    },
+    {
+      "game_enum": "TRAFFIC_RACER",
+      "game_name": "Traffic Racer",
+      "original_game_url": "https://www.madkidgames.com/game/traffic-racer"
+    },
+    {
+      "game_enum": "TRAFFIC_RIDER",
+      "game_name": "Traffic Rider",
+      "original_game_url": "https://www.madkidgames.com/game/traffic-rider"
+    },
+    {
+      "game_enum": "HUNTER_ASSASSIN_3D_NINJA_SAMURAI",
+      "game_name": "Hunter Assassin 3d Ninja Samurai",
+      "original_game_url": "https://www.madkidgames.com/game/hunter-assassin-3d-ninja-samurai"
+    },
+    {
+      "game_enum": "SEA_ANIMAL_BATTLE_SIMULATOR",
+      "game_name": "Sea Animal Battle Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/sea-animal-battle-simulator"
+    },
+    {
+      "game_enum": "GTA_CAR_STUNT_MEGA_RAMP",
+      "game_name": "Gta Car Stunt Mega Ramp",
+      "original_game_url": "https://www.madkidgames.com/game/gta-car-stunt-mega-ramp"
+    },
+    {
+      "game_enum": "UNCHAINED_YOU_CAN_NEVER_ESCAPE",
+      "game_name": "Unchained You Can Never Escape",
+      "original_game_url": "https://www.madkidgames.com/game/unchained-you-can-never-escape"
+    },
+    {
+      "game_enum": "SURVIVAL_AND_ESCAPE_ISLAND",
+      "game_name": "Survival And Escape Island",
+      "original_game_url": "https://www.madkidgames.com/game/survival-and-escape-island"
+    },
+    {
+      "game_enum": "CAR_BATTLE_SIMULATOR",
+      "game_name": "Car Battle Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/car-battle-simulator"
+    },
+    {
+      "game_enum": "ULTIMATE_EPIC_BATTLE_WAR",
+      "game_name": "Ultimate Epic Battle War",
+      "original_game_url": "https://www.madkidgames.com/game/ultimate-epic-battle-war"
+    },
+    {
+      "game_enum": "TOY_RALLY_CARS_RACING_3D",
+      "game_name": "Toy Rally Cars Racing 3d",
+      "original_game_url": "https://www.madkidgames.com/game/toy-rally-cars-racing-3d"
+    },
+    {
+      "game_enum": "FORMULA_RACE_CHAMPIONSHIP_F1_RACING",
+      "game_name": "Formula Race Championship F1 Racing",
+      "original_game_url": "https://www.madkidgames.com/game/formula-race-championship-f1-racing"
+    },
+    {
+      "game_enum": "MISSILE_DUDE_RPG_IDLE_HERO",
+      "game_name": "Missile Dude Rpg Idle Hero",
+      "original_game_url": "https://www.madkidgames.com/game/missile-dude-rpg-idle-hero"
+    },
+    {
+      "game_enum": "FORMULA_F1_RACE_LITE",
+      "game_name": "Formula F1 Race Lite",
+      "original_game_url": "https://www.madkidgames.com/game/formula-f1-race-lite"
+    },
+    {
+      "game_enum": "MONSTER_TRUCK_GO_RACING_GAMES",
+      "game_name": "Monster Truck Go Racing Games",
+      "original_game_url": "https://www.madkidgames.com/game/monster-truck-go-racing-games"
+    },
+    {
+      "game_enum": "TEMPLE_RIDER_BMX_RACING_3D",
+      "game_name": "Temple Rider Bmx Racing 3d",
+      "original_game_url": "https://www.madkidgames.com/game/temple-rider-bmx-racing-3d"
+    },
+    {
+      "game_enum": "WHO_WANTS_TO_BE_A_MILLIONAIRE",
+      "game_name": "Who Wants To Be A Millionaire",
+      "original_game_url": "https://www.madkidgames.com/game/who-wants-to-be-a-millionaire"
+    },
+    {
+      "game_enum": "MILITARY_BATTLE_SIMULATOR",
+      "game_name": "Military Battle Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/military-battle-simulator"
+    },
+    {
+      "game_enum": "TINY_WINGS_FLAPPY_PLANE",
+      "game_name": "Tiny Wings Flappy Plane",
+      "original_game_url": "https://www.madkidgames.com/game/tiny-wings-flappy-plane"
+    },
+    {
+      "game_enum": "ORCS_AND_HUMANS_EPIC_BATTLE_SIMULATOR",
+      "game_name": "Orcs And Humans Epic Battle Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/orcs-and-humans-epic-battle-simulator"
+    },
+    {
+      "game_enum": "FANTASY_EPIC_BATTLE_SIMULATOR",
+      "game_name": "Fantasy Epic Battle Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/fantasy-epic-battle-simulator"
+    },
+    {
+      "game_enum": "WILD_ANIMAL_BATTLE_SIMULATOR",
+      "game_name": "Wild Animal Battle Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/wild-animal-battle-simulator"
+    },
+    {
+      "game_enum": "EPIC_BATTLE_SIMULATOR",
+      "game_name": "Epic Battle Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/epic-battle-simulator"
+    },
+    {
+      "game_enum": "ARMY_BATTLE_SIMULATOR",
+      "game_name": "Army Battle Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/army-battle-simulator"
+    },
+    {
+      "game_enum": "CUTE_NAIL_ART_DESIGNS_GAME_3D",
+      "game_name": "Cute Nail Art Designs Game 3d",
+      "original_game_url": "https://www.madkidgames.com/game/cute-nail-art-designs-game-3d"
+    },
+    {
+      "game_enum": "LOL_GAMES_GROCERY_STORE_SUPERMARKET_SURPRISE_EGG",
+      "game_name": "Lol Games Grocery Store Supermarket Surprise Egg",
+      "original_game_url": "https://www.madkidgames.com/game/lol-games-grocery-store-supermarket-surprise-egg"
+    },
+    {
+      "game_enum": "WOODIEHOO_DRESS_UP_ANIMAL_FUN",
+      "game_name": "Woodiehoo Dress Up Animal Fun",
+      "original_game_url": "https://www.madkidgames.com/game/woodiehoo-dress-up-animal-fun"
+    },
+    {
+      "game_enum": "WOODIEHOO_ANIMAL_FRIENDS_WORLD",
+      "game_name": "Woodiehoo Animal Friends World",
+      "original_game_url": "https://www.madkidgames.com/game/woodiehoo-animal-friends-world"
+    },
+    {
+      "game_enum": "DOLLHOUSE_ROOM_DESIGN_GAMES",
+      "game_name": "Dollhouse Room Design Games",
+      "original_game_url": "https://www.madkidgames.com/game/dollhouse-room-design-games"
+    },
+    {
+      "game_enum": "CRAZY_GT_CAR_STUNTS_SIMULATOR_RAMP_CAR_STUNTS",
+      "game_name": "Crazy Gt Car Stunts Simulator Ramp Car Stunts",
+      "original_game_url": "https://www.madkidgames.com/game/crazy-gt-car-stunts-simulator-ramp-car-stunts"
+    },
+    {
+      "game_enum": "FORMULA_RACER_F1_CHAMPIONSHIP",
+      "game_name": "Formula Racer F1 Championship",
+      "original_game_url": "https://www.madkidgames.com/game/formula-racer-f1-championship"
+    },
+    {
+      "game_enum": "TRUCK_RACING_GAME_3D",
+      "game_name": "Truck Racing Game 3d",
+      "original_game_url": "https://www.madkidgames.com/game/truck-racing-game-3d"
+    },
+    {
+      "game_enum": "CAR_SHOOTING_GAME_RIVALS_RAGE",
+      "game_name": "Car Shooting Game Rivals Rage",
+      "original_game_url": "https://www.madkidgames.com/game/car-shooting-game-rivals-rage"
+    },
+    {
+      "game_enum": "EURO_BUS_SIMULATOR_GAMES",
+      "game_name": "Euro Bus Simulator Games",
+      "original_game_url": "https://www.madkidgames.com/game/euro-bus-simulator-games"
+    },
+    {
+      "game_enum": "CAR_DRIVING_SIMULATOR",
+      "game_name": "Car Driving Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/car-driving-simulator"
+    },
+    {
+      "game_enum": "INFINITE_SPEED_NO_LIMIT_RACER",
+      "game_name": "Infinite Speed No Limit Racer",
+      "original_game_url": "https://www.madkidgames.com/game/infinite-speed-no-limit-racer"
+    },
+    {
+      "game_enum": "SLOPE_DOWN_FIRST_TRIP",
+      "game_name": "Slope Down First Trip",
+      "original_game_url": "https://www.madkidgames.com/game/slope-down-first-trip"
+    },
+    {
+      "game_enum": "FASHION_NAIL_ART_DESIGNS_GAME",
+      "game_name": "Fashion Nail Art Designs Game",
+      "original_game_url": "https://www.madkidgames.com/game/fashion-nail-art-designs-game"
+    },
+    {
+      "game_enum": "FASHION_DRESS_UP_GAME",
+      "game_name": "Fashion Dress Up Game",
+      "original_game_url": "https://www.madkidgames.com/game/fashion-dress-up-game"
+    },
+    {
+      "game_enum": "MINI_CAR_RACE_3D",
+      "game_name": "Mini Car Race 3d",
+      "original_game_url": "https://www.madkidgames.com/game/mini-car-race-3d"
+    },
+    {
+      "game_enum": "OFFROAD_OIL_TANKER_TRANSPORTER_TRUCK_SIMULATOR",
+      "game_name": "Offroad Oil Tanker Transporter Truck Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/offroad-oil-tanker-transporter-truck-simulator"
+    },
+    {
+      "game_enum": "BUS_SIMULATOR_ULTIMATE_BUS_GAME",
+      "game_name": "Bus Simulator Ultimate Bus Game",
+      "original_game_url": "https://www.madkidgames.com/game/bus-simulator-ultimate-bus-game"
+    },
+    {
+      "game_enum": "CAR_RACING_REALISTIC_CAR_SIMULATOR",
+      "game_name": "Car Racing Realistic Car Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/car-racing-realistic-car-simulator"
+    },
+    {
+      "game_enum": "MAD_DAY_TRUCK_DISTANCE_GAME",
+      "game_name": "Mad Day Truck Distance Game",
+      "original_game_url": "https://www.madkidgames.com/game/mad-day-truck-distance-game"
+    },
+    {
+      "game_enum": "MAD_DAY_2_SHOOT_THE_ALIENS",
+      "game_name": "Mad Day 2 Shoot The Aliens",
+      "original_game_url": "https://www.madkidgames.com/game/mad-day-2-shoot-the-aliens"
+    },
+    {
+      "game_enum": "HOT_WHEELS_RACE_OFF",
+      "game_name": "Hot Wheels Race Off",
+      "original_game_url": "https://www.madkidgames.com/game/hot-wheels-race-off"
+    },
+    {
+      "game_enum": "MY_TOWN_POLICE_GAMES_FOR_KIDS",
+      "game_name": "My Town Police Games For Kids",
+      "original_game_url": "https://www.madkidgames.com/game/my-town-police-games-for-kids"
+    },
+    {
+      "game_enum": "MY_TOWN_HOME_FAMILY_PLAYHOUSE",
+      "game_name": "My Town Home Family Playhouse",
+      "original_game_url": "https://www.madkidgames.com/game/my-town-home-family-playhouse"
+    },
+    {
+      "game_enum": "MY_TOWN_CAR_REPAIR_MECHANIC",
+      "game_name": "My Town Car Repair Mechanic",
+      "original_game_url": "https://www.madkidgames.com/game/my-town-car-repair-mechanic"
+    },
+    {
+      "game_enum": "MY_TOWN_BEAUTY_CONTEST",
+      "game_name": "My Town Beauty Contest",
+      "original_game_url": "https://www.madkidgames.com/game/my-town-beauty-contest"
+    },
+    {
+      "game_enum": "WITCHY_BUSINESS_WITCHCRAFT_SIMULATOR",
+      "game_name": "Witchy Business Witchcraft Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/witchy-business-witchcraft-simulator"
+    },
+    {
+      "game_enum": "COZY_ORGANIZER_STRESS_FREE_FUN",
+      "game_name": "Cozy Organizer Stress Free Fun",
+      "original_game_url": "https://www.madkidgames.com/game/cozy-organizer-stress-free-fun"
+    },
+    {
+      "game_enum": "LOST_BUT_FOUND_JOB_SIMULATOR",
+      "game_name": "Lost But Found Job Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/lost-but-found-job-simulator"
+    },
+    {
+      "game_enum": "SHIP_INC_PACKAGING_SIMULATOR",
+      "game_name": "Ship Inc Packaging Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/ship-inc-packaging-simulator"
+    },
+    {
+      "game_enum": "MY_PRETEND_WILD_WEST_COWBOY",
+      "game_name": "My Pretend Wild West Cowboy",
+      "original_game_url": "https://www.madkidgames.com/game/my-pretend-wild-west-cowboy"
+    },
+    {
+      "game_enum": "MY_PRETEND_SHOPPING_MALL_TOWN",
+      "game_name": "My Pretend Shopping Mall Town",
+      "original_game_url": "https://www.madkidgames.com/game/my-pretend-shopping-mall-town"
+    },
+    {
+      "game_enum": "MY_PRETEND_BIG_APPLE_EXPLORERS",
+      "game_name": "My Pretend Big Apple Explorers",
+      "original_game_url": "https://www.madkidgames.com/game/my-pretend-big-apple-explorers"
+    },
+    {
+      "game_enum": "MY_PRETEND_NEON_NIGHT_CLUB",
+      "game_name": "My Pretend Neon Night Club",
+      "original_game_url": "https://www.madkidgames.com/game/my-pretend-neon-night-club"
+    },
+    {
+      "game_enum": "MY_PRETEND_NATURE_AND_WILDERNESS",
+      "game_name": "My Pretend Nature And Wilderness",
+      "original_game_url": "https://www.madkidgames.com/game/my-pretend-nature-and-wilderness"
+    },
+    {
+      "game_enum": "MY_PRETEND_GROCERY_STORE_GAMES",
+      "game_name": "My Pretend Grocery Store Games",
+      "original_game_url": "https://www.madkidgames.com/game/my-pretend-grocery-store-games"
+    },
+    {
+      "game_enum": "PRETEND_PRESCHOOL_KIDS_GAMES",
+      "game_name": "Pretend Preschool Kids Games",
+      "original_game_url": "https://www.madkidgames.com/game/pretend-preschool-kids-games"
+    },
+    {
+      "game_enum": "MY_PRETEND_DAYCARE_BABYSITTER",
+      "game_name": "My Pretend Daycare Babysitter",
+      "original_game_url": "https://www.madkidgames.com/game/my-pretend-daycare-babysitter"
+    },
+    {
+      "game_enum": "MY_PRETEND_FAMILY_MANSION",
+      "game_name": "My Pretend Family Mansion",
+      "original_game_url": "https://www.madkidgames.com/game/my-pretend-family-mansion"
+    },
+    {
+      "game_enum": "MY_PRETEND_CHRISTMAS_AND_HOLIDAY",
+      "game_name": "My Pretend Christmas And Holiday",
+      "original_game_url": "https://www.madkidgames.com/game/my-pretend-christmas-and-holiday"
+    },
+    {
+      "game_enum": "MY_PRETEND_HOME_AND_FAMILY_TOWN",
+      "game_name": "My Pretend Home And Family Town",
+      "original_game_url": "https://www.madkidgames.com/game/my-pretend-home-and-family-town"
+    },
+    {
+      "game_enum": "MY_PRETEND_HALLOWEEN_TOWN",
+      "game_name": "My Pretend Halloween Town",
+      "original_game_url": "https://www.madkidgames.com/game/my-pretend-halloween-town"
+    },
+    {
+      "game_enum": "MAIN_STREET_PETS_HAUNTED_HOUSE",
+      "game_name": "Main Street Pets Haunted House",
+      "original_game_url": "https://www.madkidgames.com/game/main-street-pets-haunted-house"
+    },
+    {
+      "game_enum": "MAIN_STREET_PETS_VILLAGE_TOWN",
+      "game_name": "Main Street Pets Village Town",
+      "original_game_url": "https://www.madkidgames.com/game/main-street-pets-village-town"
+    },
+    {
+      "game_enum": "MAIN_STREET_PETS_BIG_VACATION",
+      "game_name": "Main Street Pets Big Vacation",
+      "original_game_url": "https://www.madkidgames.com/game/main-street-pets-big-vacation"
+    },
+    {
+      "game_enum": "MY_PRETEND_HOTEL_VACATION",
+      "game_name": "My Pretend Hotel Vacation",
+      "original_game_url": "https://www.madkidgames.com/game/my-pretend-hotel-vacation"
+    },
+    {
+      "game_enum": "MY_PRETEND_SUMMER_WATERPARK",
+      "game_name": "My Pretend Summer Waterpark",
+      "original_game_url": "https://www.madkidgames.com/game/my-pretend-summer-waterpark"
+    },
+    {
+      "game_enum": "MY_PRETEND_HOSPITAL_TOWN_LIFE",
+      "game_name": "My Pretend Hospital Town Life",
+      "original_game_url": "https://www.madkidgames.com/game/my-pretend-hospital-town-life"
+    },
+    {
+      "game_enum": "MY_PRETEND_AIRPORT_TRAVEL_TOWN",
+      "game_name": "My Pretend Airport Travel Town",
+      "original_game_url": "https://www.madkidgames.com/game/my-pretend-airport-travel-town"
+    },
+    {
+      "game_enum": "MY_PRETEND_FAIRYTALE_LAND",
+      "game_name": "My Pretend Fairytale Land",
+      "original_game_url": "https://www.madkidgames.com/game/my-pretend-fairytale-land"
+    },
+    {
+      "game_enum": "CONUR_LIFE_GTA_2D_OPEN_WORLD_GAME",
+      "game_name": "Conur Life Gta 2d Open World Game",
+      "original_game_url": "https://www.madkidgames.com/game/conur-life-gta-2d-open-world-game"
+    },
+    {
+      "game_enum": "CATS_AND_CUPS_BARISTA_SIMULATOR",
+      "game_name": "Cats And Cups Barista Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/cats-and-cups-barista-simulator"
+    },
+    {
+      "game_enum": "AVALON_JEWELS_MATCH_3_PUZZLE",
+      "game_name": "Avalon Jewels Match 3 Puzzle",
+      "original_game_url": "https://www.madkidgames.com/game/avalon-jewels-match-3-puzzle"
+    },
+    {
+      "game_enum": "WILDLIFE_MATCH_3_PUZZLE",
+      "game_name": "Wildlife Match 3 Puzzle",
+      "original_game_url": "https://www.madkidgames.com/game/wildlife-match-3-puzzle"
+    },
+    {
+      "game_enum": "ANIMAL_DROP_SAFARI_MATCH_3",
+      "game_name": "Animal Drop Safari Match 3",
+      "original_game_url": "https://www.madkidgames.com/game/animal-drop-safari-match-3"
+    },
+    {
+      "game_enum": "MY_TOWN_PRESCHOOL_KIDS_GAME",
+      "game_name": "My Town Preschool Kids Game",
+      "original_game_url": "https://www.madkidgames.com/game/my-town-preschool-kids-game"
+    },
+    {
+      "game_enum": "MMX_HILL_DASH_2_RACE_OFFROAD",
+      "game_name": "Mmx Hill Dash 2 Race Offroad",
+      "original_game_url": "https://www.madkidgames.com/game/mmx-hill-dash-2-race-offroad"
+    },
+    {
+      "game_enum": "MMX_HILL_DASH",
+      "game_name": "Mmx Hill Dash",
+      "original_game_url": "https://www.madkidgames.com/game/mmx-hill-dash"
+    },
+    {
+      "game_enum": "BLOB_LINE_COLORFUL_PUZZLE_GAME",
+      "game_name": "Blob Line Colorful Puzzle Game",
+      "original_game_url": "https://www.madkidgames.com/game/blob-line-colorful-puzzle-game"
+    },
+    {
+      "game_enum": "AVALON_JEWELS_3_MATCH_3_PUZZLE_GAME",
+      "game_name": "Avalon Jewels 3 Match 3 Puzzle Game",
+      "original_game_url": "https://www.madkidgames.com/game/avalon-jewels-3-match-3-puzzle-game"
+    },
+    {
+      "game_enum": "IDLE_GUARDIANS_IDLE_RPG_GAMES",
+      "game_name": "Idle Guardians Idle Rpg Games",
+      "original_game_url": "https://www.madkidgames.com/game/idle-guardians-idle-rpg-games"
+    },
+    {
+      "game_enum": "EPIC_BATTLE_SIMULATOR_2",
+      "game_name": "Epic Battle Simulator 2",
+      "original_game_url": "https://www.madkidgames.com/game/epic-battle-simulator-2"
+    },
+    {
+      "game_enum": "MAD_TRUCK_CHALLENGE_4X4_RACING",
+      "game_name": "Mad Truck Challenge 4x4 Racing",
+      "original_game_url": "https://www.madkidgames.com/game/mad-truck-challenge-4x4-racing"
+    },
+    {
+      "game_enum": "BEAT_THE_PUPPET",
+      "game_name": "Beat The Puppet",
+      "original_game_url": "https://www.madkidgames.com/game/beat-the-puppet"
+    },
+    {
+      "game_enum": "CAR_EATS_CAR_APOCALYPSE_RACE",
+      "game_name": "Car Eats Car Apocalypse Race",
+      "original_game_url": "https://www.madkidgames.com/game/car-eats-car-apocalypse-race"
+    },
+    {
+      "game_enum": "STICKMAN_WORLD_BATTLE",
+      "game_name": "Stickman World Battle",
+      "original_game_url": "https://www.madkidgames.com/game/stickman-world-battle"
+    },
+    {
+      "game_enum": "STICK_PUZZLE_STICKMAN_CLASH",
+      "game_name": "Stick Puzzle Stickman Clash",
+      "original_game_url": "https://www.madkidgames.com/game/stick-puzzle-stickman-clash"
+    },
+    {
+      "game_enum": "DRIVE_OR_DIE_ZOMBIE_APOCALYPSE",
+      "game_name": "Drive Or Die Zombie Apocalypse",
+      "original_game_url": "https://www.madkidgames.com/game/drive-or-die-zombie-apocalypse"
+    },
+    {
+      "game_enum": "STICK_DESTRUCTION_5_ANNIHILATION",
+      "game_name": "Stick Destruction 5 Annihilation",
+      "original_game_url": "https://www.madkidgames.com/game/stick-destruction-5-annihilation"
+    },
+    {
+      "game_enum": "STICK_DESTRUCTION_2_ANNIHILATION",
+      "game_name": "Stick Destruction 2 Annihilation",
+      "original_game_url": "https://www.madkidgames.com/game/stick-destruction-2-annihilation"
+    },
+    {
+      "game_enum": "STICK_DESTRUCTION_2_RAGDOLL",
+      "game_name": "Stick Destruction 2 Ragdoll",
+      "original_game_url": "https://www.madkidgames.com/game/stick-destruction-2-ragdoll"
+    },
+    {
+      "game_enum": "STICK_DESTRUCTION_4_ANNIHILATION",
+      "game_name": "Stick Destruction 4 Annihilation",
+      "original_game_url": "https://www.madkidgames.com/game/stick-destruction-4-annihilation"
+    },
+    {
+      "game_enum": "STICKMAN_RACER_ROAD_DRAW_2_HEROES",
+      "game_name": "Stickman Racer Road Draw 2 Heroes",
+      "original_game_url": "https://www.madkidgames.com/game/stickman-racer-road-draw-2-heroes"
+    },
+    {
+      "game_enum": "STICKMAN_DESTRUCTION_3_HEROES_RAGDOLL_GAME",
+      "game_name": "Stickman Destruction 3 Heroes Ragdoll Game",
+      "original_game_url": "https://www.madkidgames.com/game/stickman-destruction-3-heroes-ragdoll-game"
+    },
+    {
+      "game_enum": "TOWER_DEFENSE_ALIEN_WAR_TD_2",
+      "game_name": "Tower Defense Alien War Td 2",
+      "original_game_url": "https://www.madkidgames.com/game/tower-defense-alien-war-td-2"
+    },
+    {
+      "game_enum": "TOWER_DEFENSE_ALIEN_WAR_TD",
+      "game_name": "Tower Defense Alien War Td",
+      "original_game_url": "https://www.madkidgames.com/game/tower-defense-alien-war-td"
+    },
+    {
+      "game_enum": "TOWER_CRUSH_DEFENSE_TD",
+      "game_name": "Tower Crush Defense Td",
+      "original_game_url": "https://www.madkidgames.com/game/tower-crush-defense-td"
+    },
+    {
+      "game_enum": "HILL_CLIMB_RACING_MCQUEEN",
+      "game_name": "Hill Climb Racing Mcqueen",
+      "original_game_url": "https://www.madkidgames.com/game/hill-climb-racing-mcqueen"
+    },
+    {
+      "game_enum": "HILL_CLIMB_RACING_3D",
+      "game_name": "Hill Climb Racing 3d",
+      "original_game_url": "https://www.madkidgames.com/game/hill-climb-racing-3d"
+    },
+    {
+      "game_enum": "DARK_VS_LIGHT_SURVIVAL_STRATEGY",
+      "game_name": "Dark Vs Light Survival Strategy",
+      "original_game_url": "https://www.madkidgames.com/game/dark-vs-light-survival-strategy"
+    },
+    {
+      "game_enum": "YASA_PETS_HOSPITAL",
+      "game_name": "Yasa Pets Hospital",
+      "original_game_url": "https://www.madkidgames.com/game/yasa-pets-hospital"
+    },
+    {
+      "game_enum": "ROYAL_BATTLETOWN_GTA_GAME",
+      "game_name": "Royal Battletown Gta Game",
+      "original_game_url": "https://www.madkidgames.com/game/royal-battletown-gta-game"
+    },
+    {
+      "game_enum": "REAL_CRICKET_GAME_INDIAN_BATTLE",
+      "game_name": "Real Cricket Game Indian Battle",
+      "original_game_url": "https://www.madkidgames.com/game/real-cricket-game-indian-battle"
+    },
+    {
+      "game_enum": "GULLY_CRICKET_GAME",
+      "game_name": "Gully Cricket Game",
+      "original_game_url": "https://www.madkidgames.com/game/gully-cricket-game"
+    },
+    {
+      "game_enum": "HAPPY_FARM_DAY_FARM_EMPIRE_IDLE_TYCOON",
+      "game_name": "Happy Farm Day Farm Empire Idle Tycoon",
+      "original_game_url": "https://www.madkidgames.com/game/happy-farm-day-farm-empire-idle-tycoon"
+    },
+    {
+      "game_enum": "WORLD_CRICKET_CHAMPIONSHIP_WCC_LITE",
+      "game_name": "World Cricket Championship Wcc Lite",
+      "original_game_url": "https://www.madkidgames.com/game/world-cricket-championship-wcc-lite"
+    },
+    {
+      "game_enum": "WOLFOO_LEARNS_NUMBERS_AND_SHAPES",
+      "game_name": "Wolfoo Learns Numbers And Shapes",
+      "original_game_url": "https://www.madkidgames.com/game/wolfoo-learns-numbers-and-shapes"
+    },
+    {
+      "game_enum": "WOLFOO_A_DAY_AT_SCHOOL",
+      "game_name": "Wolfoo A Day At School",
+      "original_game_url": "https://www.madkidgames.com/game/wolfoo-a-day-at-school"
+    },
+    {
+      "game_enum": "TOWER_DEFENSE_GALAXY_LEGEND",
+      "game_name": "Tower Defense Galaxy Legend",
+      "original_game_url": "https://www.madkidgames.com/game/tower-defense-galaxy-legend"
+    },
+    {
+      "game_enum": "TOWER_DEFENSE_ZONE_2_STRATEGY_GAME",
+      "game_name": "Tower Defense Zone 2 Strategy Game",
+      "original_game_url": "https://www.madkidgames.com/game/tower-defense-zone-2-strategy-game"
+    },
+    {
+      "game_enum": "TOWER_DEFENSE_ZONE_STRATEGY_GAME",
+      "game_name": "Tower Defense Zone Strategy Game",
+      "original_game_url": "https://www.madkidgames.com/game/tower-defense-zone-strategy-game"
+    },
+    {
+      "game_enum": "DR_PANDA_TOWN_PET_WORLD",
+      "game_name": "Dr Panda Town Pet World",
+      "original_game_url": "https://www.madkidgames.com/game/dr-panda-town-pet-world"
+    },
+    {
+      "game_enum": "DR_PANDA_TOWN_TALES",
+      "game_name": "Dr Panda Town Tales",
+      "original_game_url": "https://www.madkidgames.com/game/dr-panda-town-tales"
+    },
+    {
+      "game_enum": "DR_PANDA_TOWN_MALL",
+      "game_name": "Dr Panda Town Mall",
+      "original_game_url": "https://www.madkidgames.com/game/dr-panda-town-mall"
+    },
+    {
+      "game_enum": "DR_PANDA_TOWN_VACATION",
+      "game_name": "Dr Panda Town Vacation",
+      "original_game_url": "https://www.madkidgames.com/game/dr-panda-town-vacation"
+    },
+    {
+      "game_enum": "MY_TOWN_STORES",
+      "game_name": "My Town Stores",
+      "original_game_url": "https://www.madkidgames.com/game/my-town-stores"
+    },
+    {
+      "game_enum": "MY_TOWN_DAYCARE_GAME",
+      "game_name": "My Town Daycare Game",
+      "original_game_url": "https://www.madkidgames.com/game/my-town-daycare-game"
+    },
+    {
+      "game_enum": "MY_TOWN_BEACH_PICNIC",
+      "game_name": "My Town Beach Picnic",
+      "original_game_url": "https://www.madkidgames.com/game/my-town-beach-picnic"
+    },
+    {
+      "game_enum": "MY_TOWN_SCHOOL",
+      "game_name": "My Town School",
+      "original_game_url": "https://www.madkidgames.com/game/my-town-school"
+    },
+    {
+      "game_enum": "YASA_PETS_HOTEL",
+      "game_name": "Yasa Pets Hotel",
+      "original_game_url": "https://www.madkidgames.com/game/yasa-pets-hotel"
+    },
+    {
+      "game_enum": "YASA_PETS_VILLAGE",
+      "game_name": "Yasa Pets Village",
+      "original_game_url": "https://www.madkidgames.com/game/yasa-pets-village"
+    },
+    {
+      "game_enum": "YASA_PETS_HALLOWEEN",
+      "game_name": "Yasa Pets Halloween",
+      "original_game_url": "https://www.madkidgames.com/game/yasa-pets-halloween"
+    },
+    {
+      "game_enum": "YASA_PETS_SCHOOL",
+      "game_name": "Yasa Pets School",
+      "original_game_url": "https://www.madkidgames.com/game/yasa-pets-school"
+    },
+    {
+      "game_enum": "YASA_PETS_CHRISTMAS",
+      "game_name": "Yasa Pets Christmas",
+      "original_game_url": "https://www.madkidgames.com/game/yasa-pets-christmas"
+    },
+    {
+      "game_enum": "FARM_PEACE_FARMING_GAME",
+      "game_name": "Farm Peace Farming Game",
+      "original_game_url": "https://www.madkidgames.com/game/farm-peace-farming-game"
+    },
+    {
+      "game_enum": "MY_TOWN_HOSPITAL_DOCTOR_GAME",
+      "game_name": "My Town Hospital Doctor Game",
+      "original_game_url": "https://www.madkidgames.com/game/my-town-hospital-doctor-game"
+    },
+    {
+      "game_enum": "GROW_EMPIRE_ROME",
+      "game_name": "Grow Empire Rome",
+      "original_game_url": "https://www.madkidgames.com/game/grow-empire-rome"
+    },
+    {
+      "game_enum": "SAVAGE_DRAGON_SIMULATOR",
+      "game_name": "Savage Dragon Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/savage-dragon-simulator"
+    },
+    {
+      "game_enum": "YASA_PETS_TOWER",
+      "game_name": "Yasa Pets Tower",
+      "original_game_url": "https://www.madkidgames.com/game/yasa-pets-tower"
+    },
+    {
+      "game_enum": "MY_MONSTER_WORLD_TOWN_PLAY_GAMES_FOR_KIDS",
+      "game_name": "My Monster World Town Play Games For Kids",
+      "original_game_url": "https://www.madkidgames.com/game/my-monster-world-town-play-games-for-kids"
+    },
+    {
+      "game_enum": "MY_MONSTER_TOWN_SUPERMARKET_GROCERY_STORE_GAMES",
+      "game_name": "My Monster Town Supermarket Grocery Store Games",
+      "original_game_url": "https://www.madkidgames.com/game/my-monster-town-supermarket-grocery-store-games"
+    },
+    {
+      "game_enum": "WAR_OF_SHIPS_IO",
+      "game_name": "War Of Ships Io",
+      "original_game_url": "https://www.madkidgames.com/game/war-of-ships-io"
+    },
+    {
+      "game_enum": "BRUTAL_FISHMAN_SIMULATOR",
+      "game_name": "Brutal Fishman Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/brutal-fishman-simulator"
+    },
+    {
+      "game_enum": "ULTIMATE_ANT_SIMULATOR",
+      "game_name": "Ultimate Ant Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/ultimate-ant-simulator"
+    },
+    {
+      "game_enum": "GIANT_FROG_SIMULATOR",
+      "game_name": "Giant Frog Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/giant-frog-simulator"
+    },
+    {
+      "game_enum": "TIZI_TOWN_MY_AIRPORT_GAMES",
+      "game_name": "Tizi Town My Airport Games",
+      "original_game_url": "https://www.madkidgames.com/game/tizi-town-my-airport-games"
+    },
+    {
+      "game_enum": "CAVEMAN_GAMES_WORLD_FOR_KIDS",
+      "game_name": "Caveman Games World For Kids",
+      "original_game_url": "https://www.madkidgames.com/game/caveman-games-world-for-kids"
+    },
+    {
+      "game_enum": "ANIMAL_TOWN_MY_SQUIRREL_HOME",
+      "game_name": "Animal Town My Squirrel Home",
+      "original_game_url": "https://www.madkidgames.com/game/animal-town-my-squirrel-home"
+    },
+    {
+      "game_enum": "SURVIVAL_ISLAND_IDLE_GAME",
+      "game_name": "Survival Island Idle Game",
+      "original_game_url": "https://www.madkidgames.com/game/survival-island-idle-game"
+    },
+    {
+      "game_enum": "SOLITAIRE_CRIME_STORIES_CHAPTER_1",
+      "game_name": "Solitaire Crime Stories Chapter 1",
+      "original_game_url": "https://www.madkidgames.com/game/solitaire-crime-stories-chapter-1"
+    },
+    {
+      "game_enum": "WUGGY_KISSY_TOWER_ESCAPE_PUZZLE",
+      "game_name": "Wuggy Kissy Tower Escape Puzzle",
+      "original_game_url": "https://www.madkidgames.com/game/wuggy-kissy-tower-escape-puzzle"
+    },
+    {
+      "game_enum": "CAKE_SORT_3D_COLOR_PUZZLE",
+      "game_name": "Cake Sort 3d Color Puzzle",
+      "original_game_url": "https://www.madkidgames.com/game/cake-sort-3d-color-puzzle"
+    },
+    {
+      "game_enum": "LOTS_OF_THINGS_2_HIDDEN_OBJECT_GAME",
+      "game_name": "Lots Of Things 2 Hidden Object Game",
+      "original_game_url": "https://www.madkidgames.com/game/lots-of-things-2-hidden-object-game"
+    },
+    {
+      "game_enum": "LICH_GHOST_SIMULATOR",
+      "game_name": "Lich Ghost Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/lich-ghost-simulator"
+    },
+    {
+      "game_enum": "VACATION_PARADISE_ALASKA_HIDDEN_OBJECT_FUN",
+      "game_name": "Vacation Paradise Alaska Hidden Object Fun",
+      "original_game_url": "https://www.madkidgames.com/game/vacation-paradise-alaska-hidden-object-fun"
+    },
+    {
+      "game_enum": "SWEET_HOME_LOOK_AND_FIND_2_HIDDEN_OBJECT_FUN",
+      "game_name": "Sweet Home Look And Find 2 Hidden Object Fun",
+      "original_game_url": "https://www.madkidgames.com/game/sweet-home-look-and-find-2-hidden-object-fun"
+    },
+    {
+      "game_enum": "LOTS_OF_THINGS_HIDDEN_OBJECT",
+      "game_name": "Lots Of Things Hidden Object",
+      "original_game_url": "https://www.madkidgames.com/game/lots-of-things-hidden-object"
+    },
+    {
+      "game_enum": "OCTOMAZE_LOGIC_PUZZLE_GAME",
+      "game_name": "Octomaze Logic Puzzle Game",
+      "original_game_url": "https://www.madkidgames.com/game/octomaze-logic-puzzle-game"
+    },
+    {
+      "game_enum": "TRAIN_CLIMB_RACING_TRAIN_SIMULATOR_3D",
+      "game_name": "Train Climb Racing Train Simulator 3d",
+      "original_game_url": "https://www.madkidgames.com/game/train-climb-racing-train-simulator-3d"
+    },
+    {
+      "game_enum": "PEPI_HOUSE_HAPPY_FAMILY",
+      "game_name": "Pepi House Happy Family",
+      "original_game_url": "https://www.madkidgames.com/game/pepi-house-happy-family"
+    },
+    {
+      "game_enum": "PEPI_HOSPITAL_LEARN_AND_CARE",
+      "game_name": "Pepi Hospital Learn And Care",
+      "original_game_url": "https://www.madkidgames.com/game/pepi-hospital-learn-and-care"
+    },
+    {
+      "game_enum": "ORC_SLINGER_SIMULATOR",
+      "game_name": "Orc Slinger Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/orc-slinger-simulator"
+    },
+    {
+      "game_enum": "CARGO_TRUCK_SIMULATOR",
+      "game_name": "Cargo Truck Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/cargo-truck-simulator"
+    },
+    {
+      "game_enum": "FASTEST_CARS_TRAFFIC_RACER",
+      "game_name": "Fastest Cars Traffic Racer",
+      "original_game_url": "https://www.madkidgames.com/game/fastest-cars-traffic-racer"
+    },
+    {
+      "game_enum": "POLICE_CAR_SUV_SIMULATOR",
+      "game_name": "Police Car Suv Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/police-car-suv-simulator"
+    },
+    {
+      "game_enum": "CATANA_MATCH_3_STRATEGY",
+      "game_name": "Catana Match 3 Strategy",
+      "original_game_url": "https://www.madkidgames.com/game/catana-match-3-strategy"
+    },
+    {
+      "game_enum": "EVIL_MUSHROOM_SIMULATOR",
+      "game_name": "Evil Mushroom Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/evil-mushroom-simulator"
+    },
+    {
+      "game_enum": "PEPI_SUPER_STORES_FUN_GAMES",
+      "game_name": "Pepi Super Stores Fun Games",
+      "original_game_url": "https://www.madkidgames.com/game/pepi-super-stores-fun-games"
+    },
+    {
+      "game_enum": "CARNIVOROUS_PLANT_SIMULATOR",
+      "game_name": "Carnivorous Plant Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/carnivorous-plant-simulator"
+    },
+    {
+      "game_enum": "RUNE_LORD_MATCH_3_PUZZLE_GAME",
+      "game_name": "Rune Lord Match 3 Puzzle Game",
+      "original_game_url": "https://www.madkidgames.com/game/rune-lord-match-3-puzzle-game"
+    },
+    {
+      "game_enum": "CLAWS_AND_FEATHERS_3",
+      "game_name": "Claws And Feathers 3",
+      "original_game_url": "https://www.madkidgames.com/game/claws-and-feathers-3"
+    },
+    {
+      "game_enum": "SCHOOL_BUS_DRIVING_SIMULATOR",
+      "game_name": "School Bus Driving Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/school-bus-driving-simulator"
+    },
+    {
+      "game_enum": "OFFROAD_JEEP_4X4_CAR_DRIVING_SIMULATOR",
+      "game_name": "Offroad Jeep 4x4 Car Driving Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/offroad-jeep-4x4-car-driving-simulator"
+    },
+    {
+      "game_enum": "FREE_KICK_FOOTBALL_3D_SOCCER",
+      "game_name": "Free Kick Football 3d Soccer",
+      "original_game_url": "https://www.madkidgames.com/game/free-kick-football-3d-soccer"
+    },
+    {
+      "game_enum": "MONSTER_BEE_SIMULATOR",
+      "game_name": "Monster Bee Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/monster-bee-simulator"
+    },
+    {
+      "game_enum": "BEAR_WARRIOR_SIMULATOR",
+      "game_name": "Bear Warrior Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/bear-warrior-simulator"
+    },
+    {
+      "game_enum": "OCTOPUS_ROBOT_CAR_GAME_3D",
+      "game_name": "Octopus Robot Car Game 3d",
+      "original_game_url": "https://www.madkidgames.com/game/octopus-robot-car-game-3d"
+    },
+    {
+      "game_enum": "VACATION_HOTEL_STORIES",
+      "game_name": "Vacation Hotel Stories",
+      "original_game_url": "https://www.madkidgames.com/game/vacation-hotel-stories"
+    },
+    {
+      "game_enum": "SUNNY_SCHOOL_STORIES",
+      "game_name": "Sunny School Stories",
+      "original_game_url": "https://www.madkidgames.com/game/sunny-school-stories"
+    },
+    {
+      "game_enum": "HAPPY_DAYCARE_STORIES_SCHOOL",
+      "game_name": "Happy Daycare Stories School",
+      "original_game_url": "https://www.madkidgames.com/game/happy-daycare-stories-school"
+    },
+    {
+      "game_enum": "UNDERCOVER_SECRET_MANAGEMENT",
+      "game_name": "Undercover Secret Management",
+      "original_game_url": "https://www.madkidgames.com/game/undercover-secret-management"
+    },
+    {
+      "game_enum": "UNDERCOVER_BLOOD_BONDS",
+      "game_name": "Undercover Blood Bonds",
+      "original_game_url": "https://www.madkidgames.com/game/undercover-blood-bonds"
+    },
+    {
+      "game_enum": "RACE_WARRIOR_3D_CAR_RACING",
+      "game_name": "Race Warrior 3d Car Racing",
+      "original_game_url": "https://www.madkidgames.com/game/race-warrior-3d-car-racing"
+    },
+    {
+      "game_enum": "TRUCK_SIMULATOR_ULTIMATE_3D",
+      "game_name": "Truck Simulator Ultimate 3d",
+      "original_game_url": "https://www.madkidgames.com/game/truck-simulator-ultimate-3d"
+    },
+    {
+      "game_enum": "EXTREME_BUS_DRIVER_SIMULATOR",
+      "game_name": "Extreme Bus Driver Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/extreme-bus-driver-simulator"
+    },
+    {
+      "game_enum": "BUNNY_RAT_SIMULATOR",
+      "game_name": "Bunny Rat Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/bunny-rat-simulator"
+    },
+    {
+      "game_enum": "LEGENDARY_MANTICORE_SIMULATOR",
+      "game_name": "Legendary Manticore Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/legendary-manticore-simulator"
+    },
+    {
+      "game_enum": "NYMPH_FAIRY_SIMULATOR",
+      "game_name": "Nymph Fairy Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/nymph-fairy-simulator"
+    },
+    {
+      "game_enum": "ICE_GUARDIAN_SIMULATOR",
+      "game_name": "Ice Guardian Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/ice-guardian-simulator"
+    },
+    {
+      "game_enum": "FANTASY_DRAGON_SIMULATOR_ANIMAL_SURVIVAL_GAME",
+      "game_name": "Fantasy Dragon Simulator Animal Survival Game",
+      "original_game_url": "https://www.madkidgames.com/game/fantasy-dragon-simulator-animal-survival-game"
+    },
+    {
+      "game_enum": "SKELETON_ARMY_WARRIOR_SIMULATOR",
+      "game_name": "Skeleton Army Warrior Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/skeleton-army-warrior-simulator"
+    },
+    {
+      "game_enum": "CLASH_OF_CLANS_GOLEM_SIMULATOR",
+      "game_name": "Clash Of Clans Golem Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/clash-of-clans-golem-simulator"
+    },
+    {
+      "game_enum": "GARBAGE_TRUCK_DRIVING_SIMULATOR",
+      "game_name": "Garbage Truck Driving Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/garbage-truck-driving-simulator"
+    },
+    {
+      "game_enum": "ULTIMATE_SPIDER_SIMULATOR",
+      "game_name": "Ultimate Spider Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/ultimate-spider-simulator"
+    },
+    {
+      "game_enum": "BOAR_CLAN_ANIMAL_SIMULATOR",
+      "game_name": "Boar Clan Animal Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/boar-clan-animal-simulator"
+    },
+    {
+      "game_enum": "RHINO_KING_ANIMAL_SIMULATOR",
+      "game_name": "Rhino King Animal Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/rhino-king-animal-simulator"
+    },
+    {
+      "game_enum": "WOLF_CLAN_SIMULATOR_WILD_ANIMAL_SURVIVAL_GAME",
+      "game_name": "Wolf Clan Simulator Wild Animal Survival Game",
+      "original_game_url": "https://www.madkidgames.com/game/wolf-clan-simulator-wild-animal-survival-game"
+    },
+    {
+      "game_enum": "WOLF_SURVIVAL_SIMULATOR",
+      "game_name": "Wolf Survival Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/wolf-survival-simulator"
+    },
+    {
+      "game_enum": "TIGER_SURVIVAL_SIMULATOR",
+      "game_name": "Tiger Survival Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/tiger-survival-simulator"
+    },
+    {
+      "game_enum": "ULTIMATE_MOTORCYCLE_SIMULATOR",
+      "game_name": "Ultimate Motorcycle Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/ultimate-motorcycle-simulator"
+    },
+    {
+      "game_enum": "ULTIMATE_CAR_DRIVING_SIMULATOR",
+      "game_name": "Ultimate Car Driving Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/ultimate-car-driving-simulator"
+    },
+    {
+      "game_enum": "NINJA_SAMURAI_ACTION_RPG_SURVIVAL",
+      "game_name": "Ninja Samurai Action Rpg Survival",
+      "original_game_url": "https://www.madkidgames.com/game/ninja-samurai-action-rpg-survival"
+    },
+    {
+      "game_enum": "ASSASSINS_CREED_BARBARIAN_OPEN_WORLD_RPG",
+      "game_name": "Assassins Creed Barbarian Open World Rpg",
+      "original_game_url": "https://www.madkidgames.com/game/assassins-creed-barbarian-open-world-rpg"
+    },
+    {
+      "game_enum": "YETI_SIMULATOR_YETI_VLOG_VEO_3",
+      "game_name": "Yeti Simulator Yeti Vlog Veo 3",
+      "original_game_url": "https://www.madkidgames.com/game/yeti-simulator-yeti-vlog-veo-3"
+    },
+    {
+      "game_enum": "WILD_ELEPHANT_SIMULATOR_ANIMAL_SURVIVAL_GAME",
+      "game_name": "Wild Elephant Simulator Animal Survival Game",
+      "original_game_url": "https://www.madkidgames.com/game/wild-elephant-simulator-animal-survival-game"
+    },
+    {
+      "game_enum": "GHOST_SIMULATOR",
+      "game_name": "Ghost Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/ghost-simulator"
+    },
+    {
+      "game_enum": "JURASSIC_WORLD_SIMULATOR",
+      "game_name": "Jurassic World Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/jurassic-world-simulator"
+    },
+    {
+      "game_enum": "DISASTER_WILL_STRIKE_2",
+      "game_name": "Disaster Will Strike 2",
+      "original_game_url": "https://www.madkidgames.com/game/disaster-will-strike-2"
+    },
+    {
+      "game_enum": "DISASTER_WILL_STRIKE",
+      "game_name": "Disaster Will Strike",
+      "original_game_url": "https://www.madkidgames.com/game/disaster-will-strike"
+    },
+    {
+      "game_enum": "CHICKZ_PHYSICS_BASED_PUZZLE",
+      "game_name": "Chickz Physics Based Puzzle",
+      "original_game_url": "https://www.madkidgames.com/game/chickz-physics-based-puzzle"
+    },
+    {
+      "game_enum": "PIGGY_WIGGY_PHYSICS_PUZZLE",
+      "game_name": "Piggy Wiggy Physics Puzzle",
+      "original_game_url": "https://www.madkidgames.com/game/piggy-wiggy-physics-puzzle"
+    },
+    {
+      "game_enum": "CASINO_SLOTS_GAMES_PREMIUM",
+      "game_name": "Casino Slots Games Premium",
+      "original_game_url": "https://www.madkidgames.com/game/casino-slots-games-premium"
+    },
+    {
+      "game_enum": "FAMILY_FARM_ROYAL",
+      "game_name": "Family Farm Royal",
+      "original_game_url": "https://www.madkidgames.com/game/family-farm-royal"
+    },
+    {
+      "game_enum": "COVER_ORANGE_SAVE_THE_FRUIT",
+      "game_name": "Cover Orange Save The Fruit",
+      "original_game_url": "https://www.madkidgames.com/game/cover-orange-save-the-fruit"
+    },
+    {
+      "game_enum": "BAKING_BREAD_COOKING_GAME",
+      "game_name": "Baking Bread Cooking Game",
+      "original_game_url": "https://www.madkidgames.com/game/baking-bread-cooking-game"
+    },
+    {
+      "game_enum": "DELICIOUS_COOKING_AND_ROMANCE",
+      "game_name": "Delicious Cooking And Romance",
+      "original_game_url": "https://www.madkidgames.com/game/delicious-cooking-and-romance"
+    },
+    {
+      "game_enum": "DELICIOUS_MANSION_MYSTERY",
+      "game_name": "Delicious Mansion Mystery",
+      "original_game_url": "https://www.madkidgames.com/game/delicious-mansion-mystery"
+    },
+    {
+      "game_enum": "CLAIRES_CRUISIN_CAFE_FEST_FRENZY",
+      "game_name": "Claires Cruisin Cafe Fest Frenzy",
+      "original_game_url": "https://www.madkidgames.com/game/claires-cruisin-cafe-fest-frenzy"
+    },
+    {
+      "game_enum": "CLAIRES_CAFE_TASTY_CUISINE",
+      "game_name": "Claires Cafe Tasty Cuisine",
+      "original_game_url": "https://www.madkidgames.com/game/claires-cafe-tasty-cuisine"
+    },
+    {
+      "game_enum": "CLAIRES_CAFE_SEA_ADVENTURE",
+      "game_name": "Claires Cafe Sea Adventure",
+      "original_game_url": "https://www.madkidgames.com/game/claires-cafe-sea-adventure"
+    },
+    {
+      "game_enum": "ZOMBIE_RABBITS_VS_SHELDON",
+      "game_name": "Zombie Rabbits Vs Sheldon",
+      "original_game_url": "https://www.madkidgames.com/game/zombie-rabbits-vs-sheldon"
+    },
+    {
+      "game_enum": "ZOMBIES_WAR_CASTLE_DEFEND",
+      "game_name": "Zombies War Castle Defend",
+      "original_game_url": "https://www.madkidgames.com/game/zombies-war-castle-defend"
+    },
+    {
+      "game_enum": "MINI_TD_2_RELAX_TOWER_DEFENSE",
+      "game_name": "Mini Td 2 Relax Tower Defense",
+      "original_game_url": "https://www.madkidgames.com/game/mini-td-2-relax-tower-defense"
+    },
+    {
+      "game_enum": "STICKMAN_REVENGE_3_NINJA_WARRIOR",
+      "game_name": "Stickman Revenge 3 Ninja Warrior",
+      "original_game_url": "https://www.madkidgames.com/game/stickman-revenge-3-ninja-warrior"
+    },
+    {
+      "game_enum": "FRONTIER_WARS_2_RIVAL_KINGDOMS",
+      "game_name": "Frontier Wars 2 Rival Kingdoms",
+      "original_game_url": "https://www.madkidgames.com/game/frontier-wars-2-rival-kingdoms"
+    },
+    {
+      "game_enum": "KING_OF_DEFENSE_THE_LAST_DEFENDER",
+      "game_name": "King Of Defense The Last Defender",
+      "original_game_url": "https://www.madkidgames.com/game/king-of-defense-the-last-defender"
+    },
+    {
+      "game_enum": "ROSE_RIDDLE_2_WEREWOLF_SHADOW",
+      "game_name": "Rose Riddle 2 Werewolf Shadow",
+      "original_game_url": "https://www.madkidgames.com/game/rose-riddle-2-werewolf-shadow"
+    },
+    {
+      "game_enum": "SKY_TD_HARDCORE_TOWER_DEFENSE",
+      "game_name": "Sky Td Hardcore Tower Defense",
+      "original_game_url": "https://www.madkidgames.com/game/sky-td-hardcore-tower-defense"
+    },
+    {
+      "game_enum": "DAILY_SHOPPING_STORIES",
+      "game_name": "Daily Shopping Stories",
+      "original_game_url": "https://www.madkidgames.com/game/daily-shopping-stories"
+    },
+    {
+      "game_enum": "NITRO_RACING_3D_CAR_RACING_GAMES",
+      "game_name": "Nitro Racing 3d Car Racing Games",
+      "original_game_url": "https://www.madkidgames.com/game/nitro-racing-3d-car-racing-games"
+    },
+    {
+      "game_enum": "BIKE_RACE_RACING_GAME",
+      "game_name": "Bike Race Racing Game",
+      "original_game_url": "https://www.madkidgames.com/game/bike-race-racing-game"
+    },
+    {
+      "game_enum": "ROSE_RIDDLE_THE_FAIRY_TALE_DETECTIVE",
+      "game_name": "Rose Riddle The Fairy Tale Detective",
+      "original_game_url": "https://www.madkidgames.com/game/rose-riddle-the-fairy-tale-detective"
+    },
+    {
+      "game_enum": "WORD_CAFE_CROSSWORD_PUZZLE_GAME",
+      "game_name": "Word Cafe Crossword Puzzle Game",
+      "original_game_url": "https://www.madkidgames.com/game/word-cafe-crossword-puzzle-game"
+    },
+    {
+      "game_enum": "MINECLICKER_IDLE_MINECRAFT_CLICKER",
+      "game_name": "Mineclicker Idle Minecraft Clicker",
+      "original_game_url": "https://www.madkidgames.com/game/mineclicker-idle-minecraft-clicker"
+    },
+    {
+      "game_enum": "TASTY_MERGE_MATCH_3_PUZZLE",
+      "game_name": "Tasty Merge Match 3 Puzzle",
+      "original_game_url": "https://www.madkidgames.com/game/tasty-merge-match-3-puzzle"
+    },
+    {
+      "game_enum": "OPEN_WORLD_RPG_BALD_KNIGHT",
+      "game_name": "Open World Rpg Bald Knight",
+      "original_game_url": "https://www.madkidgames.com/game/open-world-rpg-bald-knight"
+    },
+    {
+      "game_enum": "KINGDOM_DEFENSE_2_SWORD_HERO",
+      "game_name": "Kingdom Defense 2 Sword Hero",
+      "original_game_url": "https://www.madkidgames.com/game/kingdom-defense-2-sword-hero"
+    },
+    {
+      "game_enum": "KINGDOM_DEFENSE_HERO_LEGEND_TD",
+      "game_name": "Kingdom Defense Hero Legend Td",
+      "original_game_url": "https://www.madkidgames.com/game/kingdom-defense-hero-legend-td"
+    },
+    {
+      "game_enum": "BINGO_POOL_CLASSIC_BINGO_GAMES",
+      "game_name": "Bingo Pool Classic Bingo Games",
+      "original_game_url": "https://www.madkidgames.com/game/bingo-pool-classic-bingo-games"
+    },
+    {
+      "game_enum": "BINGO_HAPPY_CARD_BINGO_GAMES",
+      "game_name": "Bingo Happy Card Bingo Games",
+      "original_game_url": "https://www.madkidgames.com/game/bingo-happy-card-bingo-games"
+    },
+    {
+      "game_enum": "BINGO_SMILE_VEGAS_BINGO_GAME",
+      "game_name": "Bingo Smile Vegas Bingo Game",
+      "original_game_url": "https://www.madkidgames.com/game/bingo-smile-vegas-bingo-game"
+    },
+    {
+      "game_enum": "SNAKE_WARZ_IO_GAMES_SNAKE_GAME",
+      "game_name": "Snake Warz Io Games Snake Game",
+      "original_game_url": "https://www.madkidgames.com/game/snake-warz-io-games-snake-game"
+    },
+    {
+      "game_enum": "SOLITAIRE_FUN_CLASSIC_GAMES",
+      "game_name": "Solitaire Fun Classic Games",
+      "original_game_url": "https://www.madkidgames.com/game/solitaire-fun-classic-games"
+    },
+    {
+      "game_enum": "DREAMLAND_SOLITAIRE_DARK_PROPHECY",
+      "game_name": "Dreamland Solitaire Dark Prophecy",
+      "original_game_url": "https://www.madkidgames.com/game/dreamland-solitaire-dark-prophecy"
+    },
+    {
+      "game_enum": "BUBBLE_SHOOTER_RACCOON_RESCUE",
+      "game_name": "Bubble Shooter Raccoon Rescue",
+      "original_game_url": "https://www.madkidgames.com/game/bubble-shooter-raccoon-rescue"
+    },
+    {
+      "game_enum": "AVALON_JEWELS_2",
+      "game_name": "Avalon Jewels 2",
+      "original_game_url": "https://www.madkidgames.com/game/avalon-jewels-2"
+    },
+    {
+      "game_enum": "CENTRAL_HOSPITAL_STORIES",
+      "game_name": "Central Hospital Stories",
+      "original_game_url": "https://www.madkidgames.com/game/central-hospital-stories"
+    },
+    {
+      "game_enum": "BRAIN_CRAZY_IQ_CHALLENGE_PUZZLE",
+      "game_name": "Brain Crazy Iq Challenge Puzzle",
+      "original_game_url": "https://www.madkidgames.com/game/brain-crazy-iq-challenge-puzzle"
+    },
+    {
+      "game_enum": "SCARY_BEAT_BOX_SPRANKY_MIX",
+      "game_name": "Scary Beat Box Spranky Mix",
+      "original_game_url": "https://www.madkidgames.com/game/scary-beat-box-spranky-mix"
+    },
+    {
+      "game_enum": "HERO_TOWER_WARS_MERGE_PUZZLE",
+      "game_name": "Hero Tower Wars Merge Puzzle",
+      "original_game_url": "https://www.madkidgames.com/game/hero-tower-wars-merge-puzzle"
+    },
+    {
+      "game_enum": "POLICE_CAR_CHASE",
+      "game_name": "Police Car Chase",
+      "original_game_url": "https://www.madkidgames.com/game/police-car-chase"
+    },
+    {
+      "game_enum": "COVER_ORANGE_JOURNEY",
+      "game_name": "Cover Orange Journey",
+      "original_game_url": "https://www.madkidgames.com/game/cover-orange-journey"
+    },
+    {
+      "game_enum": "COOKING_LOVE_CHEF_RESTAURANT",
+      "game_name": "Cooking Love Chef Restaurant",
+      "original_game_url": "https://www.madkidgames.com/game/cooking-love-chef-restaurant"
+    },
+    {
+      "game_enum": "MORTICIAN_TYCOON_IDLE_EMPIRE",
+      "game_name": "Mortician Tycoon Idle Empire",
+      "original_game_url": "https://www.madkidgames.com/game/mortician-tycoon-idle-empire"
+    },
+    {
+      "game_enum": "IDLE_WORKER_TYCOON_GAME",
+      "game_name": "Idle Worker Tycoon Game",
+      "original_game_url": "https://www.madkidgames.com/game/idle-worker-tycoon-game"
+    },
+    {
+      "game_enum": "FISH_TYCOON_2_VIRTUAL_AQUARIUM",
+      "game_name": "Fish Tycoon 2 Virtual Aquarium",
+      "original_game_url": "https://www.madkidgames.com/game/fish-tycoon-2-virtual-aquarium"
+    },
+    {
+      "game_enum": "SEVEN_SEAS_JEWELS_MATCH_3_PUZZLE",
+      "game_name": "Seven Seas Jewels Match 3 Puzzle",
+      "original_game_url": "https://www.madkidgames.com/game/seven-seas-jewels-match-3-puzzle"
+    },
+    {
+      "game_enum": "GAME_OF_WARRIORS",
+      "game_name": "Game Of Warriors",
+      "original_game_url": "https://www.madkidgames.com/game/game-of-warriors"
+    },
+    {
+      "game_enum": "NEIGHBORS_VS_MONSTERS",
+      "game_name": "Neighbors Vs Monsters",
+      "original_game_url": "https://www.madkidgames.com/game/neighbors-vs-monsters"
+    },
+    {
+      "game_enum": "REAL_POOL_3D",
+      "game_name": "Real Pool 3d",
+      "original_game_url": "https://www.madkidgames.com/game/real-pool-3d"
+    },
+    {
+      "game_enum": "JUICE_JAM_MATCH_3_PUZZLE",
+      "game_name": "Juice Jam Match 3 Puzzle",
+      "original_game_url": "https://www.madkidgames.com/game/juice-jam-match-3-puzzle"
+    },
+    {
+      "game_enum": "STICK_GUYS_DEFENSE",
+      "game_name": "Stick Guys Defense",
+      "original_game_url": "https://www.madkidgames.com/game/stick-guys-defense"
+    },
+    {
+      "game_enum": "BUS_AWAY_TRAFFIC_JAM",
+      "game_name": "Bus Away Traffic Jam",
+      "original_game_url": "https://www.madkidgames.com/game/bus-away-traffic-jam"
+    },
+    {
+      "game_enum": "SWEET_HOME_STORIES",
+      "game_name": "Sweet Home Stories",
+      "original_game_url": "https://www.madkidgames.com/game/sweet-home-stories"
+    },
+    {
+      "game_enum": "WORLD_CRICKET_CHAMPIONSHIP_LTE",
+      "game_name": "World Cricket Championship Lte",
+      "original_game_url": "https://www.madkidgames.com/game/world-cricket-championship-lte"
+    },
+    {
+      "game_enum": "CASTLE_STORY_PUZZLE_CHOICE",
+      "game_name": "Castle Story Puzzle Choice",
+      "original_game_url": "https://www.madkidgames.com/game/castle-story-puzzle-choice"
+    },
+    {
+      "game_enum": "SQUAD_SHOOTER",
+      "game_name": "Squad Shooter",
+      "original_game_url": "https://www.madkidgames.com/game/squad-shooter"
+    },
+    {
+      "game_enum": "EPIC_RUNNER_SOLDIERS_SHOOTING",
+      "game_name": "Epic Runner Soldiers Shooting",
+      "original_game_url": "https://www.madkidgames.com/game/epic-runner-soldiers-shooting"
+    },
+    {
+      "game_enum": "NUTS_AND_BOLTS_SCREWING_PUZZLE",
+      "game_name": "Nuts And Bolts Screwing Puzzle",
+      "original_game_url": "https://www.madkidgames.com/game/nuts-and-bolts-screwing-puzzle"
+    },
+    {
+      "game_enum": "BUS_STOP_JAM",
+      "game_name": "Bus Stop Jam",
+      "original_game_url": "https://www.madkidgames.com/game/bus-stop-jam"
+    },
+    {
+      "game_enum": "CARQUEST_OPEN_WORLD_RACING",
+      "game_name": "Carquest Open World Racing",
+      "original_game_url": "https://www.madkidgames.com/game/carquest-open-world-racing"
+    },
+    {
+      "game_enum": "BLOCK_BLAST_PUZZLE_GAME",
+      "game_name": "Block Blast Puzzle Game",
+      "original_game_url": "https://www.madkidgames.com/game/block-blast-puzzle-game"
+    },
+    {
+      "game_enum": "SURVIVOR_IO",
+      "game_name": "Survivor Io",
+      "original_game_url": "https://www.madkidgames.com/game/survivor-io"
+    },
+    {
+      "game_enum": "SNAKE_KINGDOM_SIMULATOR",
+      "game_name": "Snake Kingdom Simulator",
+      "original_game_url": "https://www.madkidgames.com/game/snake-kingdom-simulator"
+    },
+    {
+      "game_enum": "CARAGE_OPEN_WORLD_SIMULATOR_3D",
+      "game_name": "Carage Open World Simulator 3d",
+      "original_game_url": "https://www.madkidgames.com/game/carage-open-world-simulator-3d"
+    },
+    {
+      "game_enum": "RANMEN_MASTER_RAMEN_COOKING_GAME",
+      "game_name": "Ranmen Master Ramen Cooking Game",
+      "original_game_url": "https://www.madkidgames.com/game/ranmen-master-ramen-cooking-game"
+    },
+    {
+      "game_enum": "HIT_EXPERT_3D_SHOOTING_GAME",
+      "game_name": "Hit Expert 3d Shooting Game",
+      "original_game_url": "https://www.madkidgames.com/game/hit-expert-3d-shooting-game"
+    },
+    {
+      "game_enum": "MERGE_SQUAD_2048",
+      "game_name": "Merge Squad 2048",
+      "original_game_url": "https://www.madkidgames.com/game/merge-squad-2048"
+    },
+    {
+      "game_enum": "RUBIK_S_CUBE_ONLINE_SOLVER",
+      "game_name": "Rubik S Cube Online Solver",
+      "original_game_url": "https://www.madkidgames.com/game/rubik-s-cube-online-solver"
+    },
+    {
+      "game_enum": "DOMINO_HEXA_PUZZLE",
+      "game_name": "Domino Hexa Puzzle",
+      "original_game_url": "https://www.madkidgames.com/game/domino-hexa-puzzle"
+    },
+    {
+      "game_enum": "OUTLETS_RUSH_3D_IDLE_TYCOON",
+      "game_name": "Outlets Rush 3d Idle Tycoon",
+      "original_game_url": "https://www.madkidgames.com/game/outlets-rush-3d-idle-tycoon"
+    },
+    {
+      "game_enum": "HEXA_SORT_3D_PUZZLE",
+      "game_name": "Hexa Sort 3d Puzzle",
+      "original_game_url": "https://www.madkidgames.com/game/hexa-sort-3d-puzzle"
+    },
+    {
+      "game_enum": "MONSTER_MAKEOVER_3D_MIX_MONSTERS",
+      "game_name": "Monster Makeover 3d Mix Monsters",
+      "original_game_url": "https://www.madkidgames.com/game/monster-makeover-3d-mix-monsters"
+    },
+    {
+      "game_enum": "PET_DOCTOR_CUTE_ANIMALS",
+      "game_name": "Pet Doctor Cute Animals",
+      "original_game_url": "https://www.madkidgames.com/game/pet-doctor-cute-animals"
+    },
+    {
+      "game_enum": "NUTS_AND_BOLTS_SCREW_PUZZLE",
+      "game_name": "Nuts And Bolts Screw Puzzle",
+      "original_game_url": "https://www.madkidgames.com/game/nuts-and-bolts-screw-puzzle"
+    },
+    {
+      "game_enum": "ONE_LINE_PUZZLE_GAME",
+      "game_name": "One Line Puzzle Game",
+      "original_game_url": "https://www.madkidgames.com/game/one-line-puzzle-game"
+    },
+    {
+      "game_enum": "TILES_MATCH_3_ZOO_TILES",
+      "game_name": "Tiles Match 3 Zoo Tiles",
+      "original_game_url": "https://www.madkidgames.com/game/tiles-match-3-zoo-tiles"
+    },
+    {
+      "game_enum": "MY_JOYFUL_FARM_WORLD",
+      "game_name": "My Joyful Farm World",
+      "original_game_url": "https://www.madkidgames.com/game/my-joyful-farm-world"
+    },
+    {
+      "game_enum": "MYSTIC_QUEST_MATCH_3_RPG",
+      "game_name": "Mystic Quest Match 3 Rpg",
+      "original_game_url": "https://www.madkidgames.com/game/mystic-quest-match-3-rpg"
+    },
+    {
+      "game_enum": "DUNE_TINY_WINGS",
+      "game_name": "Dune Tiny Wings",
+      "original_game_url": "https://www.madkidgames.com/game/dune-tiny-wings"
+    }
+  ]
+}

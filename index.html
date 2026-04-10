@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Idle Miner Tycoon Gold Games</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <link rel="manifest" href="manifest.webmanifest">
+    <!-- Supabase Core Scripts -->
+    <style>
+        /* Premium Telegram Button */
+        #telegram-community-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 10000;
+            background: linear-gradient(135deg, #0088cc, #00aaff);
+            color: white;
+            padding: 10px 18px;
+            border-radius: 50px;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
+            cursor: pointer;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-decoration: none;
+            font-size: 14px;
+        }
+        #telegram-community-btn:hover {
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 136, 204, 0.6);
+        }
+        #telegram-community-btn:active {
+            transform: scale(0.95);
+        }
+        #telegram-community-btn img {
+            width: 20px;
+            height: 20px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        window.unityInstance = null;
+        // Mock Telegram for Desktop
+        if (!window.Telegram || !window.Telegram.WebApp || !window.Telegram.WebApp.initDataUnsafe.user) {
+            window.Telegram = window.Telegram || {};
+            window.Telegram.WebApp = window.Telegram.WebApp || { ready: () => {}, initDataUnsafe: { user: { id: 12345, first_name: 'DevPlayer', username: 'dev_user' } } };
+        }
+    </script>
+
+
+
+    <!-- Global Redirect Guard & Link Hijacker -->
+    <script>
+        (function() {
+            const BOT_URL = 'https://t.me/IdleMinerTycoon_bot';
+
+            // 1. Hijack window.open
+            window.open = function(url, target, features) {
+                console.log('[Redirect Guard] Hijacking redirect to bot:', url);
+                window.location.href = BOT_URL; // Redirect the same tab to the bot
+                return null; 
+            };
+
+            // 2. Intercept Unity External Eval
+            const originalEval = window.eval;
+            window.eval = function(code) {
+                if (code.includes('window.open') || code.includes('location.href')) {
+                    console.log('[Redirect Guard] Hijacking eval redirect to bot');
+                    window.location.href = BOT_URL;
+                    return null;
+                }
+                return originalEval.apply(this, arguments);
+            };
+
+            console.log('[Redirect Guard] System Active. Navigation hijacked to: ' + BOT_URL);
+        })();
+    </script>
+
+    <script>
+        const SUPABASE_URL = 'https://shybhyuhavuqpmxzoxaa.supabase.co';
+        const SUPABASE_KEY = 'sb_publishable__CJiDmKcAn3G5jndY-XK5Q_oosKmSQM';
+        const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+        
+        let telegramUser = null;
+        if (window.Telegram && window.Telegram.WebApp) {
+            const webApp = window.Telegram.WebApp;
+            webApp.ready();
+            telegramUser = webApp.initDataUnsafe.user;
+            console.log('[Telegram] User detected:', telegramUser);
+        }
+
+        const log = (msg) => {
+            const el = document.getElementById('sb-log');
+            if (el) el.innerHTML = msg;
+            console.log('[Supabase]', msg);
+        };
+
+        async function initializeIdentity() {
+            if (!telegramUser) {
+                log('No Telegram user found. Using Guest mode.');
+                return;
+            }
+
+            log(`Welcome ${telegramUser.first_name}! Syncing profile...`);
+            
+            const { data, error } = await supabaseClient
+                .from('profiles')
+                .upsert({ 
+                    id: telegramUser.id.toString(), 
+                    username: telegramUser.username || telegramUser.first_name,
+                    updated_at: new Date().toISOString()
+                }, { onConflict: 'id' });
+
+            if (error) {
+                log('Identity Sync Error: ' + error.message);
+            } else {
+                log('Identity Linked to Supabase ✅');
+            }
+        }
+
+        // --- PlayFab Interception Bridge ---
+        const originalOpen = XMLHttpRequest.prototype.open;
+        XMLHttpRequest.prototype.open = function(method, url) {
+            if (url.includes('playfabapi.com')) {
+                this._isPlayFab = true;
+                this._playFabUrl = url;
+            }
+            return originalOpen.apply(this, arguments);
+        };
+
+        const originalSend = XMLHttpRequest.prototype.send;
+        XMLHttpRequest.prototype.send = function(body) {
+            if (this._isPlayFab) {
+                console.log('[PlayFab Intercept]', this._playFabUrl, body);
+                
+                // 1. Intercept Save (UpdateUserData)
+                if (this._playFabUrl.includes('UpdateUserData')) {
+                    handleSupabaseSave(body);
+                }
+
+                // 2. Intercept Load (GetUserData)
+                if (this._playFabUrl.includes('GetUserData')) {
+                    handleSupabaseLoad(this);
+                    return;
+                }
+
+                // 3. Intercept Login (LoginWithCustomID, etc.)
+                if (this._playFabUrl.includes('LoginWith')) {
+                    log('Logging in via Telegram identity...');
+                    const playFabId = telegramUser ? telegramUser.id.toString() : 'guest';
+                    respondWithMock(this, { 
+                        "code": 200, 
+                        "status": "OK", 
+                        "data": { 
+                            "SessionTicket": "mock-ticket-" + Date.now(), 
+                            "PlayFabId": playFabId
+                        } 
+                    });
+                    return;
+                }
+            }
+            return originalSend.apply(this, arguments);
+        };
+
+        async function handleSupabaseSave(payload) {
+            if (!telegramUser) return;
+            try {
+                const data = JSON.parse(payload);
+                log('Saving to Supabase...');
+                const { error } = await supabaseClient
+                    .from('game_saves')
+                    .upsert({ 
+                        user_id: telegramUser.id.toString(), 
+                        save_data: data.Data,
+                        updated_at: new Date().toISOString()
+                    }, { onConflict: 'user_id' });
+                if (!error) log('Progress Saved! ☁️');
+            } catch (e) {
+                console.error('[Supabase Save Error]', e);
+            }
+        }
+
+        async function handleSupabaseLoad(xhr) {
+            if (!telegramUser) {
+                // If no telegram user, just let it fail or default
+                respondWithMock(xhr, { "code": 200, "status": "OK", "data": { "Data": {} } });
+                return;
+            }
+
+            log('Fetching cloud save...');
+            const { data, error } = await supabaseClient
+                .from('game_saves')
+                .select('save_data')
+                .eq('user_id', telegramUser.id.toString())
+                .single();
+
+            if (data && data.save_data) {
+                log('Cloud Save Loaded! 🎰');
+                // Convert Supabase format to PlayFab format
+                const playFabData = {};
+                for (const key in data.save_data) {
+                    playFabData[key] = { Value: data.save_data[key], LastUpdated: new Date().toISOString() };
+                }
+                respondWithMock(xhr, { 
+                    "code": 200, 
+                    "status": "OK", 
+                    "data": { "Data": playFabData } 
+                });
+            } else {
+                log('No cloud save found. Starting fresh.');
+                respondWithMock(xhr, { "code": 200, "status": "OK", "data": { "Data": {} } });
+            }
+        }
+
+        function respondWithMock(xhr, responseData) {
+            const responseText = JSON.stringify(responseData);
+            // Define mock properties
+            Object.defineProperty(xhr, 'status', { writable: true, value: 200 });
+            Object.defineProperty(xhr, 'statusText', { writable: true, value: 'OK' });
+            Object.defineProperty(xhr, 'readyState', { writable: true, value: 4 });
+            Object.defineProperty(xhr, 'responseText', { writable: true, value: responseText });
+            Object.defineProperty(xhr, 'response', { writable: true, value: responseText });
+
+            // Trigger load events
+            if (xhr.onreadystatechange) xhr.onreadystatechange();
+            if (xhr.onload) xhr.onload();
+        }
+
+        initializeIdentity();
+    </script>
+
+    <!-- H5_MADKIDGAMES_DOMAIN_GUARD -->
+    <script>
+        (function() {
+            const BRAND = 'MadKidGames';
+            const WHITELIST_URL = './whitelisted.json';
+            const GAME_ENUM = 'IDLE_MINER_TYCOON_GOLD_GAMES';
+            const OFFICIAL_SITE = 'https://www.madkidgames.com';
+            const REDIRECT_DELAY = 300000;
+
+            // --------------------------------------------------
+            // HELPERS
+            // --------------------------------------------------
+            function normalize(d) {
+                return (d || '')
+                    .toLowerCase()
+                    .replace(/^www\\./, '')
+                    .replace(/:\\d+$/, '');
+            }
+
+            function safe(fn) {
+                try {
+                    const v = fn();
+                    return v ? normalize(v) : null;
+                } catch {
+                    return null;
+                }
+            }
+
+            function getFlag(flags, key, def) {
+                return flags && flags[key] !== undefined ? flags[key] : def;
+            }
+
+            let DEBUG = false;
+
+            function dlog() {
+                if (DEBUG) console.log.apply(console, arguments);
+            }
+
+            function dwarn() {
+                if (DEBUG) console.warn.apply(console, arguments);
+            }
+
+            const selfHost = normalize(location.hostname);
+
+            // --------------------------------------------------
+            // JS DOMAIN DETECTION (UNCHANGED)
+            // --------------------------------------------------
+            const signals = [];
+
+            signals.push(safe(() =>
+                window.location.ancestorOrigins &&
+                window.location.ancestorOrigins.length > 0 &&
+                new URL(window.location.ancestorOrigins[0]).hostname
+            ));
+
+            signals.push(safe(() => window.top?.location?.hostname));
+            signals.push(safe(() => window.parent?.location?.hostname));
+            signals.push(safe(() => document.referrer && new URL(document.referrer).hostname));
+            signals.push(safe(() => window.opener?.location?.hostname));
+
+            try {
+                const nav = performance.getEntriesByType('navigation')[0];
+                if (nav?.name) {
+                    signals.push(normalize(new URL(nav.name).hostname));
+                }
+            } catch {}
+
+            signals.push(selfHost);
+
+            const uniqueSignals = [...new Set(signals.filter(Boolean))];
+            const foreignSignals = uniqueSignals.filter(d => d !== selfHost);
+            const jsEmbeddingDomain = foreignSignals.length > 0 ? foreignSignals[0] : selfHost;
+
+            // --------------------------------------------------
+            // UNITY HANDSHAKE
+            // --------------------------------------------------
+            function waitForUnity(cb) {
+                const t = setInterval(() => {
+                    if (window.unityInstance && window.unityInstance.SendMessage) {
+                        clearInterval(t);
+                        cb();
+                    }
+                }, 100);
+            }
+
+            // --------------------------------------------------
+            // WHITELIST CHECK (CHECK ALWAYS, ENFORCE OPTIONALLY)
+            // --------------------------------------------------
+            fetch(WHITELIST_URL + '?v=' + Date.now(), {
+                    cache: 'no-store'
+                })
+                .then(r => r.json())
+                .then(json => {
+                    const flags = json.flags || {};
+
+                    DEBUG = getFlag(flags, 'debug_logs', false);
+
+                    const APPLY_ENFORCEMENT =
+                        getFlag(flags, 'redirect_on_reject', false);
+
+                    const CHECK_DOMAIN =
+                        getFlag(flags, 'enforce_domain_check', true);
+
+                    dlog('[H5] Domain guard initialized');
+                    dlog('[H5] Game enum:', GAME_ENUM);
+                    dlog('[H5] Self host:', selfHost);
+                    dlog('[H5] Detected embedding domain:', jsEmbeddingDomain);
+                    dlog('[H5] Flags:', flags);
+
+                    const game = (json.whitelisted_games || []).find(
+                        g => g.game_enum === GAME_ENUM
+                    );
+
+                    const allowedDomains =
+                        (json.allowed_domains || []).map(normalize);
+
+                    let allowed = true;
+
+                    if (CHECK_DOMAIN) {
+                        allowed = !!game &&
+                            allowedDomains.includes(jsEmbeddingDomain);
+
+                        dlog('[H5] Allowed domains:', allowedDomains);
+                        dlog('[H5] Domain allowed:', allowed);
+                    }
+
+                    // --------------------------------------------------
+                    // FINAL DECISION (LOGIC PRESERVED, ENFORCEMENT GATED)
+                    // --------------------------------------------------
+                    waitForUnity(() => {
+                        if (allowed || !APPLY_ENFORCEMENT) {
+                            dlog('[H5][' + BRAND + '] DOMAIN APPROVED');
+                            unityInstance.SendMessage('H5MadKidGames', 'H5_OnDomainApproved');
+                        } else {
+                            dwarn('[H5][' + BRAND + '] DOMAIN REJECTED');
+                            unityInstance.SendMessage('H5MadKidGames', 'H5_OnDomainRejected');
+
+                            setTimeout(() => {
+                                try {
+                                    window.top.location.href =
+                                        game?.original_game_url || OFFICIAL_SITE;
+                                } catch {
+                                    location.href = OFFICIAL_SITE;
+                                }
+                            }, REDIRECT_DELAY);
+                        }
+                    });
+                })
+                .catch(err => {
+                    console.error('[H5] Whitelist fetch failed', err);
+
+                    // Fail-open (never block by default)
+                    waitForUnity(() => {
+                        unityInstance.SendMessage('H5MadKidGames', 'H5_OnDomainApproved');
+                    });
+                });
+        })();
+    </script>
+
+    <!-- H5_MADKIDGAMES_ADS_INJECTED -->
+
+
+</head>
+
+<body style="margin: 0; padding: 0; overflow: hidden;">
+    <!-- Telegram Community Button -->
+    <a id="telegram-community-btn" href="https://t.me/IdleMinerTycoon_bot" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="TG">
+        Join Community
+    </a>
+
+    <div id="unity-container">
+        <canvas id="unity-canvas" width=540 height=960 tabindex="-1"></canvas>
+
+        <div id="unity-loading-bar">
+            <div id="unity-logo">
+                <img src="thumb_2.jpg" alt="Game Logo" id="unity-logo-img" />
+            </div>
+            <div id="unity-game-name">Idle Miner Tycoon Gold Games</div>
+            <div id="unity-company-name">by madkidgames.com</div>
+
+            <div id="unity-progress-bar-empty">
+                <div id="unity-progress-bar-full"></div>
+            </div>
+
+            <!-- ✅ Spinner placed inside loading bar -->
+            <div id="custom-loading-spinner">
+                <div class="spinner"></div>
+                <div class="spinner-text">Loading...</div>
+            </div>
+        </div>
+
+        <div id="unity-warning"></div>
+    </div>
+
+    <!-- Show spinner + loading bar immediately -->
+    <script>
+        const loadingBar = document.querySelector("#unity-loading-bar");
+        const spinner = document.getElementById("custom-loading-spinner");
+        if (loadingBar) loadingBar.style.display = "block";
+        if (spinner) spinner.style.display = "flex";
+    </script>
+
+    <script>
+        window.addEventListener("load", function() {
+            if ("serviceWorker" in navigator) {
+                navigator.serviceWorker.register("ServiceWorker.js");
+            }
+        });
+
+        const container = document.querySelector("#unity-container");
+        const canvas = document.querySelector("#unity-canvas");
+        const progressBarFull = document.querySelector("#unity-progress-bar-full");
+        const warningBanner = document.querySelector("#unity-warning");
+
+        function unityShowBanner(msg, type) {
+            function updateBannerVisibility() {
+                warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
+            }
+            const div = document.createElement('div');
+            div.innerHTML = msg;
+            warningBanner.appendChild(div);
+            if (type == 'error') div.style = 'background: red; padding: 10px;';
+            else {
+                if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
+                setTimeout(function() {
+                    warningBanner.removeChild(div);
+                    updateBannerVisibility();
+                }, 5000);
+            }
+            updateBannerVisibility();
+        }
+
+        const buildUrl = "Build";
+        const loaderUrl = buildUrl + "/7a2dbded24d57e056180125b1583e7c4.loader.js";
+
+        const config = {
+            dataUrl: buildUrl + "/a784a61709b0b544bd101d48884d318e.data",
+            frameworkUrl: buildUrl + "/3dd916af06751e3ff7a2e5465f923ab9.framework.js",
+            codeUrl: buildUrl + "/b7cfc881bfd42a78a34e059c96be3c12.wasm",
+            streamingAssetsUrl: "StreamingAssets",
+            companyName: "madkidgames.com",
+            productName: "Idle Miner Tycoon Gold Games",
+            productVersion: "2.55.0",
+            showBanner: unityShowBanner,
+        };
+
+        if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+            const meta = document.createElement('meta');
+            meta.name = 'viewport';
+            meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+            document.getElementsByTagName('head')[0].appendChild(meta);
+        }
+
+        canvas.style.background = "url('" + buildUrl + "/70e81ac5f60cb37764cbe100018c562a.jpg') center / cover";
+
+        const script = document.createElement("script");
+        script.src = loaderUrl;
+        script.onload = () => {
+            createUnityInstance(canvas, config, (progress) => {
+                progressBarFull.style.width = 100 * progress + "%";
+            }).then((instance) => {
+                window.unityInstance = instance;
+                loadingBar.style.display = "none";
+                if (spinner) spinner.style.display = "none";
+            }).catch((message) => {
+                alert(message);
+            });
+        };
+        document.body.appendChild(script);
+    </script>
+
+    <!-- INJECTED_BY: WebGLCanvasResizeInjectorLandscape (Now Portrait) -->
+    <script>
+        (function() {
+            function resizeUnityCanvas() {
+                const canvas = document.getElementById('unity-canvas');
+                if (!canvas) return;
+
+                const targetAspect = 9 / 16;
+                const windowWidth = window.innerWidth;
+                const windowHeight = window.innerHeight;
+
+                let newWidth, newHeight;
+
+                if (windowWidth / windowHeight > targetAspect) {
+                    // Window is wider than needed
+                    newHeight = windowHeight;
+                    newWidth = newHeight * targetAspect;
+                } else {
+                    // Window is taller than needed
+                    newWidth = windowWidth;
+                    newHeight = newWidth / targetAspect;
+                }
+
+                canvas.style.width = newWidth + 'px';
+                canvas.style.height = newHeight + 'px';
+                
+                // Ensure container centers the canvas
+                const container = document.getElementById('unity-container');
+                if (container) {
+                    container.style.display = 'flex';
+                    container.style.justifyContent = 'center';
+                    container.style.alignItems = 'center';
+                    container.style.background = '#000';
+                    container.style.width = '100vw';
+                    container.style.height = '100vh';
+                }
+            }
+
+            window.addEventListener('load', resizeUnityCanvas);
+            window.addEventListener('resize', resizeUnityCanvas);
+            window.addEventListener('orientationchange', resizeUnityCanvas);
+        })();
+    </script>
+
+
+</body>
+</html>
