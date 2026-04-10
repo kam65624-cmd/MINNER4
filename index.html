@@ -417,15 +417,15 @@
 
 </head>
 
-<body style="margin: 0; padding: 0; overflow: hidden;">
+<body style="margin: 0; padding: 0; overflow: hidden; height: 100vh; width: 100vw; background: #000;">
     <!-- Telegram Community Button -->
     <a id="telegram-community-btn" href="https://t.me/IdleMinerTycoon_bot" target="_blank">
         <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="TG">
         Join Community
     </a>
 
-    <div id="unity-container" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #000;">
-        <canvas id="unity-canvas" style="width: 100%; height: 100%; display: block;"></canvas>
+    <div id="unity-container" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;">
+        <canvas id="unity-canvas" style="width: 100%; height: 100%; background: #000;"></canvas>
 
         <div id="unity-loading-bar">
             <div id="unity-logo">
@@ -542,18 +542,20 @@
                 const container = document.getElementById('unity-container');
                 if (!canvas || !container) return;
 
-                // Force 100% of viewport
-                canvas.style.width = '100vw';
-                canvas.style.height = '100vh';
-                container.style.width = '100vw';
-                container.style.height = '100vh';
+                const width = window.innerWidth;
+                const height = window.innerHeight;
+
+                canvas.width = width;
+                canvas.height = height;
+                canvas.style.width = width + 'px';
+                canvas.style.height = height + 'px';
             }
 
             window.addEventListener('load', resizeUnityCanvas);
             window.addEventListener('resize', resizeUnityCanvas);
-            window.addEventListener('orientationchange', () => setTimeout(resizeUnityCanvas, 100));
+            window.addEventListener('orientationchange', () => setTimeout(resizeUnityCanvas, 200));
             
-            // Immediate resize
+            // Force it periodically to catch TG layout shifts
             setInterval(resizeUnityCanvas, 1000); 
             resizeUnityCanvas();
         })();
