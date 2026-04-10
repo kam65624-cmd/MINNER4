@@ -419,10 +419,20 @@
 
 <body style="margin: 0; padding: 0; overflow: hidden; height: 100vh; width: 100vw; background: #000;">
     <!-- Telegram Community Button -->
-    <a id="telegram-community-btn" href="https://t.me/IdleMinerTycoon_bot" target="_blank">
+    <a id="telegram-community-btn" href="https://t.me/IdleMinerTycoon_bot" target="_blank" style="display: none;">
         <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="TG">
         Join Community
     </a>
+
+    <script>
+        // Check if user has already seen/joined community
+        const hasJoined = localStorage.getItem('has_joined_community');
+        const tgBtn = document.getElementById("telegram-community-btn");
+        
+        if (!hasJoined && tgBtn) {
+            tgBtn.style.display = "flex"; // Only show if first time
+        }
+    </script>
 
     <div id="unity-container" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;">
         <canvas id="unity-canvas" style="width: 100%; height: 100%; background: #000;"></canvas>
@@ -452,15 +462,18 @@
     <script>
         const loadingBar = document.querySelector("#unity-loading-bar");
         const spinner = document.getElementById("custom-loading-spinner");
-        const tgBtn = document.getElementById("telegram-community-btn");
 
         if (loadingBar) loadingBar.style.display = "block";
         if (spinner) spinner.style.display = "flex";
 
-        // Auto-hide TG button after 7 seconds
+        // Auto-hide TG button after 10 seconds and save status
         setTimeout(() => {
-            if (tgBtn) tgBtn.classList.add('hidden');
-        }, 7000);
+            const btn = document.getElementById("telegram-community-btn");
+            if (btn) {
+                btn.classList.add('hidden');
+                localStorage.setItem('has_joined_community', 'true');
+            }
+        }, 10000);
     </script>
 
     <script>
@@ -525,8 +538,12 @@
                 window.unityInstance = instance;
                 loadingBar.style.display = "none";
                 if (spinner) spinner.style.display = "none";
-                // Final hide for TG button once game is ready
-                if (tgBtn) tgBtn.classList.add('hidden');
+                // Final hide and save status once game is ready
+                const btn = document.getElementById("telegram-community-btn");
+                if (btn) {
+                    btn.classList.add('hidden');
+                    localStorage.setItem('has_joined_community', 'true');
+                }
             }).catch((message) => {
                 alert(message);
             });
