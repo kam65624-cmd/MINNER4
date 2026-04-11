@@ -13,7 +13,7 @@ html, body {
     font-family: Arial, sans-serif;
 }
 
-/* ===== UNITY CONTAINER: Absolute full screen ===== */
+/* ===== UNITY CONTAINER: Full screen, centered ===== */
 #unity-container {
     position: fixed !important;
     top: 0 !important;
@@ -21,13 +21,28 @@ html, body {
     width: 100vw !important;
     height: 100vh !important;
     background: #000;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
 }
 
-/* ===== UNITY CANVAS: Fill container completely ===== */
+/* ===== UNITY CANVAS: Portrait (9:16) on all devices ===== */
 #unity-canvas {
     display: block !important;
-    width: 100% !important;
-    height: 100% !important;
+    /* Always portrait: height = 100vh, width = auto based on 9:16 */
+    height: 100vh !important;
+    width: calc(100vh * 9 / 16) !important;
+    max-width: 100vw !important;
+    background: #000;
+}
+
+/* On narrow screens (real mobile): fill full width */
+@media (max-aspect-ratio: 9/16) {
+    #unity-canvas {
+        width: 100vw !important;
+        height: calc(100vw * 16 / 9) !important;
+        max-height: 100vh !important;
+    }
 }
 
 /* ===== LOADING BAR ===== */
@@ -44,12 +59,12 @@ html, body {
     border-radius: 12px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
     z-index: 1000;
-    min-width: 250px;
+    min-width: 220px;
 }
 
 #unity-logo {
-    width: 180px;
-    height: 180px;
+    width: 160px;
+    height: 160px;
     margin: 0 auto 10px auto;
     border-radius: 10px;
     overflow: hidden;
@@ -66,7 +81,7 @@ html, body {
 }
 
 #unity-game-name {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
     color: #fff;
     margin-top: 10px;
@@ -74,7 +89,7 @@ html, body {
 }
 
 #unity-company-name {
-    font-size: 13px;
+    font-size: 12px;
     color: #ccc;
     margin-bottom: 15px;
     text-align: center;
@@ -131,6 +146,6 @@ html, body {
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0%  { transform: rotate(0deg); }
+    100%{ transform: rotate(360deg); }
 }
