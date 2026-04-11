@@ -51,25 +51,26 @@
     </style>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
-        window.unityInstance = null;
+        // --- EMERGENCY PROTECT (First thing to run) ---
+        window.alert = function() {};
+        window.confirm = function() { return true; };
+        window.onerror = function() { return true; }; 
 
-        // --- SILENCE ALL ALERTS (Prevents annoying error popups) ---
-        window.alert = function(msg) { console.log("Alert Suppressed:", msg); return true; };
+        window.unityInstance = null;
         
-        // --- COMPREHENSIVE ADS MOCK (Function-style to prevent crashes) ---
+        // --- COMPREHENSIVE ADS MOCK (Function-style) ---
         const mockConfig = {
             is_enabled: false,
             provider: "none",
             ad_units: { interstitial: "none", rewarded: "none" }
         };
-        
-        // Some plugins expect it as an object, others as a function returning an object
         window.adConfig = function() { return mockConfig; };
-        Object.assign(window.adConfig, mockConfig); // Also make it look like an object
+        Object.assign(window.adConfig, mockConfig);
         var adConfig = window.adConfig; 
 
-        // Mock Ad Functions expected by Unity Plugins
-        window.JSInitializeAds = function() { console.log("Ads System: MOCKED"); return true; };
+        window.JSInitializeAds = function() { return true; };
+        window.HAS_ADS = false;
+        // -------------------------------------------------------
         window.JSShowInterstitial = function() { console.log("Ads: Interstitial Blocked"); return false; };
         window.JSShowRewarded = function() { console.log("Ads: Rewarded Blocked"); return false; };
         window.JSIsInterstitialReady = function() { return false; };
@@ -510,12 +511,12 @@
         }
 
         const buildUrl = "Build";
-        const loaderUrl = buildUrl + "/7a2dbded24d57e056180125b1583e7c4.loader.js";
+        const loaderUrl = buildUrl + "/7a2dbded24d57e056180125b1583e7c4.loader.js?v=2";
 
         const config = {
-            dataUrl: buildUrl + "/a784a61709b0b544bd101d48884d318e.data",
-            frameworkUrl: buildUrl + "/3dd916af06751e3ff7a2e5465f923ab9.framework.js",
-            codeUrl: buildUrl + "/b7cfc881bfd42a78a34e059c96be3c12.wasm",
+            dataUrl: buildUrl + "/a784a61709b0b544bd101d48884d318e.data?v=2",
+            frameworkUrl: buildUrl + "/3dd916af06751e3ff7a2e5465f923ab9.framework.js?v=2",
+            codeUrl: buildUrl + "/b7cfc881bfd42a78a34e059c96be3c12.wasm?v=2",
             streamingAssetsUrl: "StreamingAssets",
             companyName: "madkidgames.com",
             productName: "Idle Miner Tycoon Gold Games",
