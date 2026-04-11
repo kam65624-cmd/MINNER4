@@ -583,7 +583,45 @@
                 loadingBar.style.display = "none";
                 if (spinner) spinner.style.display = "none";
 
-                // Final hide and save status once game is ready
+                // ====== TRUE UNITY RESIZE via Module ======
+                function applyUnitySize() {
+                    const W = window.innerWidth;
+                    const H = window.innerHeight;
+                    let cW, cH;
+
+                    if (H >= W) {
+                        cW = W; cH = H; // Portrait mobile: full screen
+                    } else {
+                        cH = H;
+                        cW = Math.round(H * 9 / 16);
+                        if (cW > W) { cW = W; cH = Math.round(W * 16 / 9); }
+                    }
+
+                    // Access Unity's internal canvas via Module
+                    const uc = instance.Module && instance.Module.canvas ? instance.Module.canvas : canvas;
+                    uc.width  = cW;
+                    uc.height = cH;
+                    uc.style.width  = cW + 'px';
+                    uc.style.height = cH + 'px';
+
+                    // Center container
+                    container.style.display = 'flex';
+                    container.style.justifyContent = 'center';
+                    container.style.alignItems = 'center';
+
+                    // Fire Unity's internal resize handler
+                    window.dispatchEvent(new Event('resize'));
+                    console.log('[Unity Resize] Applied:', cW + 'x' + cH);
+                }
+
+                applyUnitySize();
+                // Retry a few times to make sure it sticks
+                setTimeout(applyUnitySize, 300);
+                setTimeout(applyUnitySize, 1000);
+                window.addEventListener('resize', applyUnitySize);
+                // ==========================================
+
+                // Hide Telegram button
                 const btn = document.getElementById("telegram-community-btn");
                 if (btn) {
                     btn.classList.add('hidden');
