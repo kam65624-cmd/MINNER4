@@ -1,54 +1,67 @@
 <!DOCTYPE html>
 <html lang="en-us">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes">
-    <title>Unity WebGL Player | Idle Miner Tycoon Gold Games</title>
-    
-    <!-- OFFICIAL LIBTL AD SDK -->
-    <script src='https://libtl.com/sdk.js' data-zone='10861248' data-sdk='show_10861248'></script>
-
     <script>
-        // --- LEVEL 0: CRITICAL PROTECTION & AD BRIDGE ---
+        // 1. KILL ALL ALERTS IMMEDIATELY (Absolute Priority)
         (function() {
             const noop = function() {};
             window.alert = noop;
             window.confirm = function() { return true; };
             window.prompt = noop;
+            window._origError = window.onerror;
             window.onerror = function() { return true; };
+            console.log('[Security] Native alerts disabled.');
+        })();
+    </script>
 
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes">
+    <title>Unity WebGL Player | Idle Miner Tycoon Gold Games</title>
+    
+    <!-- 2. OFFICIAL LIBTL AD SDK -->
+    <script src='https://libtl.com/sdk.js' data-zone='10861248' data-sdk='show_10861248'></script>
+
+    <script>
+        // --- AD BRIDGE & LOGIC ---
+        (function() {
             window.JSShowInterstitial = function() {
-                console.log('[Ads] Showing Interstitial...');
+                console.log('[Ads] Requesting Interstitial...');
                 if (typeof show_10861248 === 'function') {
                     show_10861248().catch(e => console.error('Ad Error:', e));
+                } else {
+                    console.warn('Ad SDK not ready yet.');
                 }
                 return true;
             };
 
             window.JSShowRewarded = function() {
-                console.log('[Ads] Showing Rewarded Video...');
+                console.log('[Ads] Requesting Rewarded...');
                 if (typeof show_10861248 === 'function') {
                     show_10861248('pop').then(() => {
-                        console.log('[Ads] Reward Earned!');
+                        console.log('[Ads] User watched ad. Rewarding...');
                         if (window.unityInstance) {
                             window.unityInstance.SendMessage('AdManager', 'OnRewardedAdFinished');
                             window.unityInstance.SendMessage('AdsManager', 'OnRewardedAdFinished');
                         }
-                    }).catch(e => console.error('[Ads] Rewarded Error:', e));
+                    }).catch(e => {
+                        console.error('[Ads] Ad failed or closed early:', e);
+                    });
+                } else {
+                    alert('Ads are still loading, please wait...'); // This won't show because alert is noop
+                    console.log('Ad SDK not ready.');
                 }
                 return true;
             };
 
+            // Mock config for Unity
             const mock = { is_enabled: true, provider: "custom", ad_units: { interstitial: "10861248", rewarded: "10861248" } };
-            const adFn = function() { return mock; };
             try {
-                Object.defineProperty(window, 'adConfig', { value: adFn, writable: false });
-            } catch(e) { window.adConfig = adFn; }
+                Object.defineProperty(window, 'adConfig', { value: () => mock, writable: false });
+            } catch(e) { window.adConfig = () => mock; }
 
             window.JSInitializeAds = function() { return true; };
             window.HAS_ADS = true;
-            console.log('[System] Shields Active. LibTL SDK Integrated.');
         })();
     </script>
             const adFn = function() { return mock; };
