@@ -11,36 +11,42 @@
     <link rel="manifest" href="manifest.webmanifest">
     <!-- Supabase Core Scripts -->
     <style>
-        /* Premium Telegram Button */
+        /* Integrated Game-Style Telegram Button */
         #telegram-community-btn {
             position: fixed;
-            top: 10px;
-            left: 10px; /* Moved to Left */
+            top: 20px;
+            left: 20px;
             z-index: 10000;
-            background: rgba(0, 0, 0, 0.5); /* Darker and more subtle */
-            backdrop-filter: blur(4px);
-            color: rgba(255, 255, 255, 0.8);
-            padding: 5px 12px;
-            border-radius: 15px;
-            font-family: sans-serif;
-            font-size: 11px;
+            background: #2ea5ff; /* Match Unity button blue */
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-family: 'Arial Black', Gadget, sans-serif; /* Thick game font */
+            text-transform: uppercase;
+            font-size: 13px;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 8px;
             cursor: pointer;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.5s ease;
+            border: 3px solid #1c6ba5; /* Darker border for 3D effect */
+            box-shadow: 0 4px 0 #1c6ba5; /* Bottom shadow for Unity look */
+            transition: all 0.1s;
             text-decoration: none;
             opacity: 1;
+        }
+        #telegram-community-btn:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #1c6ba5;
         }
         #telegram-community-btn.hidden {
             opacity: 0 !important;
             visibility: hidden;
-            transform: translateX(-20px);
+            transform: scale(0.8);
         }
         #telegram-community-btn img {
-            width: 14px;
-            height: 14px;
+            width: 18px;
+            height: 18px;
+            filter: drop-shadow(0 1px 1px rgba(0,0,0,0.3));
         }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -77,20 +83,10 @@
     <script>
         (function() {
             const BOT_URL = 'https://t.me/IdleMinerTycoon_bot';
-
-            // 1. Hijack window.open
+            
+            // Intercept window.open calls from Unity
+            const originalOpen = window.open;
             window.open = function(url, target, features) {
-                console.log('[Redirect Guard] Hijacking redirect to bot:', url);
-                window.location.href = BOT_URL; // Redirect the same tab to the bot
-                return null; 
-            };
-
-            // 2. Intercept Unity External Eval
-            const originalEval = window.eval;
-            window.eval = function(code) {
-                if (code.includes('window.open') || code.includes('location.href')) {
-                    console.log('[Redirect Guard] Hijacking eval redirect to bot');
-                    window.location.href = BOT_URL;
                     return null;
                 }
                 return originalEval.apply(this, arguments);
