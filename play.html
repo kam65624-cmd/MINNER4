@@ -3,34 +3,50 @@
 
 <head>
 
-    <script>
-        // --- LEVEL 0: ABSOLUTE PROTECTION (First thing in the DOM) ---
+        // --- REAL ADS INTEGRATION (Mapped from Unity) ---
         (function() {
-            // Kill all popups immediately
             const noop = function() {};
-            window.alert = noop;
+            window.alert = noop; 
             window.confirm = function() { return true; };
             window.prompt = noop;
             window.onerror = function() { return true; };
 
-            // Lock adConfig as a function so nothing can overwrite it with an object
-            const mock = { is_enabled: false, provider: "none", ad_units: {} };
+            // Real Ad Function Bridge
+            window.JSShowInterstitial = function() {
+                console.log('[Ads] Showing Interstitial...');
+                if (typeof show_10861248 === 'function') {
+                    show_10861248().catch(e => console.error('Ad Error:', e));
+                }
+                return true;
+            };
+
+            window.JSShowRewarded = function() {
+                console.log('[Ads] Showing Rewarded Video...');
+                if (typeof show_10861248 === 'function') {
+                    show_10861248('pop').then(() => {
+                        console.log('[Ads] Reward Earned!');
+                        // Tell Unity the reward was successful
+                        if (window.unityInstance) {
+                            // Common Unity Ad Callback names - we try multiple common ones
+                            window.unityInstance.SendMessage('AdManager', 'OnRewardedAdFinished');
+                            window.unityInstance.SendMessage('AdsManager', 'OnRewardedAdFinished');
+                        }
+                    }).catch(e => {
+                        console.error('[Ads] Rewarded Error:', e);
+                    });
+                }
+                return true;
+            };
+
+            const mock = { is_enabled: true, provider: "custom", ad_units: { interstitial: "10861248", rewarded: "10861248" } };
             const adFn = function() { return mock; };
-            Object.assign(adFn, mock);
-            
             try {
-                Object.defineProperty(window, 'adConfig', {
-                    value: adFn,
-                    writable: false,
-                    configurable: false
-                });
+                Object.defineProperty(window, 'adConfig', { value: adFn, writable: false });
             } catch(e) { window.adConfig = adFn; }
 
             window.JSInitializeAds = function() { return true; };
-            window.HAS_ADS = false;
-            console.log('[System] Shields Active. adConfig locked.');
+            window.HAS_ADS = true;
         })();
-    </script>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes">
