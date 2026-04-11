@@ -443,7 +443,8 @@
     </script>
 
     <div id="unity-container">
-        <canvas id="unity-canvas" tabindex="-1"></canvas>
+        <canvas id="unity-canvas" tabindex="-1"
+            style="width:100%;height:100%;"></canvas>
 
         <div id="unity-loading-bar">
             <div id="unity-logo">
@@ -566,26 +567,31 @@
         document.body.appendChild(script);
     </script>
 
-    <!-- INJECTED: Unity Responsive Resize -->
+    <!-- INJECTED: Unity Full Screen Fix -->
     <script>
-        (function() {
-            // Unity WebGL listens to the browser's resize event to update its canvas.
-            // We fire it on load and periodically to ensure it always fills the screen.
-            function triggerUnityResize() {
-                window.dispatchEvent(new Event('resize'));
-            }
+    (function() {
+        // Force CSS on container and canvas immediately
+        const c = document.getElementById('unity-canvas');
+        const cont = document.getElementById('unity-container');
+        if (c && cont) {
+            cont.style.cssText = 'position:fixed!important;top:0!important;left:0!important;width:100vw!important;height:100vh!important;background:#000;';
+            c.style.cssText = 'display:block!important;width:100%!important;height:100%!important;';
+        }
 
-            window.addEventListener('load', () => setTimeout(triggerUnityResize, 500));
-            window.addEventListener('orientationchange', () => setTimeout(triggerUnityResize, 300));
-            
-            // Fire every 2 seconds for the first 10 seconds to catch any late redraws
-            let count = 0;
-            const interval = setInterval(() => {
-                triggerUnityResize();
-                count++;
-                if (count >= 5) clearInterval(interval);
-            }, 2000);
-        })();
+        // Re-fire resize after Unity loads
+        window.addEventListener('resize', function() {
+            const canvas = document.getElementById('unity-canvas');
+            if (canvas) {
+                canvas.style.width = '100%';
+                canvas.style.height = '100%';
+            }
+        });
+
+        // Fire resize 3 times to make sure Unity catches it
+        [500, 1500, 3000].forEach(t => {
+            setTimeout(() => window.dispatchEvent(new Event('resize')), t);
+        });
+    })();
     </script>
 
 
