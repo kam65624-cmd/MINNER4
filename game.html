@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <script>
+        // 1. KILL ALL ALERTS IMMEDIATELY
+        (function() {
+            const noop = function() {};
+            window.alert = noop;
+            window.confirm = function() { return true; };
+            window.prompt = noop;
+            window.onerror = function() { return true; };
+            console.log('[Security] Native alerts disabled.');
+        })();
+    </script>
+
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes">
+    <title>Unity WebGL Player | Idle Miner Tycoon</title>
+    
+    <!-- 2. OFFICIAL LIBTL AD SDK -->
+    <script src='https://libtl.com/sdk.js' data-zone='10861248' data-sdk='show_10861248'></script>
+
+    <script>
+        // --- AD BRIDGE ---
+        (function() {
+            window.JSShowInterstitial = function() {
+                console.log('[Ads] Calling show_10861248...');
+                if (typeof show_10861248 === 'function') {
+                    show_10861248().catch(e => console.error(e));
+                }
+                return true;
+            };
+
+            window.JSShowRewarded = function() {
+                console.log('[Ads] Calling show_10861248(pop)...');
+                if (typeof show_10861248 === 'function') {
+                    show_10861248('pop').then(() => {
+                        console.log('[Ads] Rewarding...');
+                        if (window.unityInstance) {
+                            window.unityInstance.SendMessage('AdManager', 'OnRewardedAdFinished');
+                            window.unityInstance.SendMessage('AdsManager', 'OnRewardedAdFinished');
+                        }
+                    }).catch(e => console.error(e));
+                }
+                return true;
+            };
+
+            const mock = { is_enabled: true, provider: "custom", ad_units: { interstitial: "10861248", rewarded: "10861248" } };
+            try {
+                Object.defineProperty(window, 'adConfig', { value: () => mock, writable: false });
+            } catch(e) { window.adConfig = () => mock; }
+
+            window.JSInitializeAds = function() { return true; };
+            window.HAS_ADS = true;
+        })();
+    </script>
+
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <link rel="manifest" href="manifest.webmanifest">
+</head>
+<body style="margin: 0; background: #000; overflow: hidden;">
+    <div id="unity-container">
+        <canvas id="unity-canvas" tabindex="-1" style="width:100%; height:100%; background: #231F20;"></canvas>
+        <script>
+            // Portrait Fix Init
+            (function(){
+                var W = window.innerWidth, H = window.innerHeight;
+                var cW, cH;
+                if(H >= W){ cW=W; cH=H; }
+                else{ cH=H; cW=Math.round(H*9/16); if(cW>W){cW=W;cH=Math.round(W*16/9);} }
+                var cv = document.getElementById('unity-canvas');
+                var ct = document.getElementById('unity-container');
+                cv.setAttribute('width', cW);
+                cv.setAttribute('height', cH);
+                cv.style.cssText = 'width:'+cW+'px;height:'+cH+'px;display:block;';
+                ct.style.cssText = 'position:fixed;top:0;left:0;width:100vw;height:100vh;display:flex;justify-content:center;align-items:center;background:#000;';
+            })();
+        </script>
+        <div id="unity-loading-bar">
+            <div id="unity-logo"></div>
+            <div id="unity-progress-bar-empty">
+                <div id="unity-progress-bar-full"></div>
+            </div>
+        </div>
+        <div id="unity-warning"></div>
+    </div>
+    
+    <script>
+        var container = document.querySelector("#unity-container");
+        var canvas = document.querySelector("#unity-canvas");
+        var loadingBar = document.querySelector("#unity-loading-bar");
+        var progressBarFull = document.querySelector("#unity-progress-bar-full");
+        var warningBanner = document.querySelector("#unity-warning");
+
+        function unityShowBanner(msg, type) {
+            console.log('[Unity]', type, msg);
+        }
+
+        var buildUrl = "Build";
+        var loaderUrl = buildUrl + "/3dd916af06751e3ff7a2e5465f923ab9.loader.js?v=2";
+        var config = {
+            dataUrl: buildUrl + "/11e54badcb659a85055b46d4949a2072.data?v=2",
+            frameworkUrl: buildUrl + "/3dd916af06751e3ff7a2e5465f923ab9.framework.js?v=2",
+            codeUrl: buildUrl + "/b7cfc881bfd42a78a34e059c96be3c12.wasm?v=2",
+            streamingAssetsUrl: "StreamingAssets",
+            companyName: "madkidgames",
+            productName: "Idle Miner Tycoon Gold Games",
+            productVersion: "1.0",
+            showBanner: unityShowBanner,
+        };
+
+        var script = document.createElement("script");
+        script.src = loaderUrl;
+        script.onload = () => {
+            createUnityInstance(canvas, config, (progress) => {
+                progressBarFull.style.width = 100 * progress + "%";
+            }).then((instance) => {
+                window.unityInstance = instance;
+                loadingBar.style.display = "none";
+                window.dispatchEvent(new Event('resize'));
+            }).catch((message) => {
+                console.error(message);
+            });
+        };
+        document.body.appendChild(script);
+    </script>
+</body>
+</html>
