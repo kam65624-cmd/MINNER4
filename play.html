@@ -5,6 +5,7 @@
 
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes">
     <title>Unity WebGL Player | Idle Miner Tycoon Gold Games</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
@@ -93,14 +94,17 @@
             const BOT_URL = 'https://t.me/IdleMinerTycoon_bot';
             
             // Intercept window.open calls from Unity
-            const originalOpen = window.open;
+            const _origOpen = window.open;
             window.open = function(url, target, features) {
-                    return null;
+                if (url && (url.includes('facebook') || url.includes('instagram') || 
+                            url.includes('twitter') || url.includes('google') ||
+                            url.includes('discord'))) {
+                    return _origOpen(BOT_URL, '_blank');
                 }
-                return originalEval.apply(this, arguments);
+                return _origOpen.apply(this, arguments);
             };
 
-            console.log('[Redirect Guard] System Active. Navigation hijacked to: ' + BOT_URL);
+            console.log('[Redirect Guard] Active');
         })();
     </script>
 
@@ -549,7 +553,8 @@
                     localStorage.setItem('has_joined_community', 'true');
                 }
             }).catch((message) => {
-                alert(message);
+                // Silently log error - DO NOT show alert to user
+                console.error('[Unity Error]', message);
             });
         };
         document.body.appendChild(script);
