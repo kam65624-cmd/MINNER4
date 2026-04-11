@@ -442,8 +442,8 @@
         }
     </script>
 
-    <div id="unity-container" style="width: 100%; height: 100%; position: absolute; top: 0; left: 0;">
-        <canvas id="unity-canvas" style="width: 100%; height: 100%; background: #000;"></canvas>
+    <div id="unity-container">
+        <canvas id="unity-canvas" tabindex="-1"></canvas>
 
         <div id="unity-loading-bar">
             <div id="unity-logo">
@@ -546,6 +546,12 @@
                 window.unityInstance = instance;
                 loadingBar.style.display = "none";
                 if (spinner) spinner.style.display = "none";
+                
+                // Tell Unity to resize itself to fill the container
+                setTimeout(() => {
+                    window.dispatchEvent(new Event('resize'));
+                }, 100);
+
                 // Final hide and save status once game is ready
                 const btn = document.getElementById("telegram-community-btn");
                 if (btn) {
@@ -560,58 +566,25 @@
         document.body.appendChild(script);
     </script>
 
-    <!-- INJECTED: Truly Responsive Fix (Mobile vs Web) -->
+    <!-- INJECTED: Unity Responsive Resize -->
     <script>
         (function() {
-            function resizeUnityCanvas() {
-                const canvas = document.getElementById('unity-canvas');
-                const container = document.getElementById('unity-container');
-                if (!canvas || !container) return;
-
-                const width = window.innerWidth;
-                const height = window.innerHeight;
-
-                // Check if it's a "mobile-like" screen (tall) or a "web/desktop" screen (wide)
-                const isVertical = height > width;
-
-                if (isVertical || /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-                    // MOBILE/PORTRAIT: Full Screen
-                    canvas.width = width;
-                    canvas.height = height;
-                    canvas.style.width = width + 'px';
-                    canvas.style.height = height + 'px';
-                    container.style.width = '100vw';
-                    container.style.height = '100vh';
-                } else {
-                    // WEB/LANDSCAPE: 9:16 Centered
-                    const targetAspect = 9 / 16;
-                    let newHeight = height;
-                    let newWidth = newHeight * targetAspect;
-
-                    if (newWidth > width) {
-                        newWidth = width;
-                        newHeight = newWidth / targetAspect;
-                    }
-
-                    canvas.width = newWidth;
-                    canvas.height = newHeight;
-                    canvas.style.width = newWidth + 'px';
-                    canvas.style.height = newHeight + 'px';
-                    
-                    container.style.width = '100vw';
-                    container.style.height = '100vh';
-                    container.style.display = 'flex';
-                    container.style.justifyContent = 'center';
-                    container.style.alignItems = 'center';
-                }
+            // Unity WebGL listens to the browser's resize event to update its canvas.
+            // We fire it on load and periodically to ensure it always fills the screen.
+            function triggerUnityResize() {
+                window.dispatchEvent(new Event('resize'));
             }
 
-            window.addEventListener('load', resizeUnityCanvas);
-            window.addEventListener('resize', resizeUnityCanvas);
-            window.addEventListener('orientationchange', () => setTimeout(resizeUnityCanvas, 200));
+            window.addEventListener('load', () => setTimeout(triggerUnityResize, 500));
+            window.addEventListener('orientationchange', () => setTimeout(triggerUnityResize, 300));
             
-            setInterval(resizeUnityCanvas, 1000); 
-            resizeUnityCanvas();
+            // Fire every 2 seconds for the first 10 seconds to catch any late redraws
+            let count = 0;
+            const interval = setInterval(() => {
+                triggerUnityResize();
+                count++;
+                if (count >= 5) clearInterval(interval);
+            }, 2000);
         })();
     </script>
 
