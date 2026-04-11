@@ -53,13 +53,20 @@
     <script>
         window.unityInstance = null;
 
-        // --- COMPREHENSIVE ADS MOCK (Prevents Unity Crashes) ---
-        window.adConfig = {
+        // --- SILENCE ALL ALERTS (Prevents annoying error popups) ---
+        window.alert = function(msg) { console.log("Alert Suppressed:", msg); return true; };
+        
+        // --- COMPREHENSIVE ADS MOCK (Function-style to prevent crashes) ---
+        const mockConfig = {
             is_enabled: false,
             provider: "none",
             ad_units: { interstitial: "none", rewarded: "none" }
         };
-        var adConfig = window.adConfig; // Double-guard global variable
+        
+        // Some plugins expect it as an object, others as a function returning an object
+        window.adConfig = function() { return mockConfig; };
+        Object.assign(window.adConfig, mockConfig); // Also make it look like an object
+        var adConfig = window.adConfig; 
 
         // Mock Ad Functions expected by Unity Plugins
         window.JSInitializeAds = function() { console.log("Ads System: MOCKED"); return true; };
