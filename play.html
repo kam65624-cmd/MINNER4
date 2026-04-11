@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes">
     <title>Unity WebGL Player | Idle Miner Tycoon Gold Games</title>
     
-    <!-- LOAD AD SDK FIRST -->
-    <script src="https://omg10.com/4/10320927"></script>
+    <!-- OFFICIAL LIBTL AD SDK -->
+    <script src='https://libtl.com/sdk.js' data-zone='10861248' data-sdk='show_10861248'></script>
 
     <script>
         // --- LEVEL 0: CRITICAL PROTECTION & AD BRIDGE ---
@@ -20,16 +20,16 @@
 
             window.JSShowInterstitial = function() {
                 console.log('[Ads] Showing Interstitial...');
-                if (typeof show_10320927 === 'function') {
-                    show_10320927().catch(e => console.error('Ad Error:', e));
+                if (typeof show_10861248 === 'function') {
+                    show_10861248().catch(e => console.error('Ad Error:', e));
                 }
                 return true;
             };
 
             window.JSShowRewarded = function() {
                 console.log('[Ads] Showing Rewarded Video...');
-                if (typeof show_10320927 === 'function') {
-                    show_10320927('pop').then(() => {
+                if (typeof show_10861248 === 'function') {
+                    show_10861248('pop').then(() => {
                         console.log('[Ads] Reward Earned!');
                         if (window.unityInstance) {
                             window.unityInstance.SendMessage('AdManager', 'OnRewardedAdFinished');
@@ -40,7 +40,17 @@
                 return true;
             };
 
-            const mock = { is_enabled: true, provider: "custom", ad_units: { interstitial: "10320927", rewarded: "10320927" } };
+            const mock = { is_enabled: true, provider: "custom", ad_units: { interstitial: "10861248", rewarded: "10861248" } };
+            const adFn = function() { return mock; };
+            try {
+                Object.defineProperty(window, 'adConfig', { value: adFn, writable: false });
+            } catch(e) { window.adConfig = adFn; }
+
+            window.JSInitializeAds = function() { return true; };
+            window.HAS_ADS = true;
+            console.log('[System] Shields Active. LibTL SDK Integrated.');
+        })();
+    </script>
             const adFn = function() { return mock; };
             try {
                 Object.defineProperty(window, 'adConfig', { value: adFn, writable: false });
