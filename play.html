@@ -3,6 +3,34 @@
 
 <head>
 
+    <script>
+        // --- LEVEL 0: ABSOLUTE PROTECTION (First thing in the DOM) ---
+        (function() {
+            // Kill all popups immediately
+            const noop = function() {};
+            window.alert = noop;
+            window.confirm = function() { return true; };
+            window.prompt = noop;
+            window.onerror = function() { return true; };
+
+            // Lock adConfig as a function so nothing can overwrite it with an object
+            const mock = { is_enabled: false, provider: "none", ad_units: {} };
+            const adFn = function() { return mock; };
+            Object.assign(adFn, mock);
+            
+            try {
+                Object.defineProperty(window, 'adConfig', {
+                    value: adFn,
+                    writable: false,
+                    configurable: false
+                });
+            } catch(e) { window.adConfig = adFn; }
+
+            window.JSInitializeAds = function() { return true; };
+            window.HAS_ADS = false;
+            console.log('[System] Shields Active. adConfig locked.');
+        })();
+    </script>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes">
@@ -10,67 +38,10 @@
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     <link rel="manifest" href="manifest.webmanifest">
-    <!-- Supabase Core Scripts -->
-    <style>
-        /* Integrated Game-Style Telegram Button */
-        #telegram-community-btn {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            z-index: 10000;
-            background: #2ea5ff; /* Match Unity button blue */
-            color: white;
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-family: 'Arial Black', Gadget, sans-serif; /* Thick game font */
-            text-transform: uppercase;
-            font-size: 13px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-            border: 3px solid #1c6ba5; /* Darker border for 3D effect */
-            box-shadow: 0 4px 0 #1c6ba5; /* Bottom shadow for Unity look */
-            transition: all 0.1s;
-            text-decoration: none;
-            opacity: 1;
-        }
-        #telegram-community-btn:active {
-            transform: translateY(2px);
-            box-shadow: 0 2px 0 #1c6ba5;
-        }
-        #telegram-community-btn.hidden {
-            opacity: 0 !important;
-            visibility: hidden;
-            transform: scale(0.8);
-        }
-        #telegram-community-btn img {
-            width: 18px;
-            height: 18px;
-            filter: drop-shadow(0 1px 1px rgba(0,0,0,0.3));
-        }
-    </style>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
-        // --- EMERGENCY PROTECT (First thing to run) ---
-        window.alert = function() {};
-        window.confirm = function() { return true; };
-        window.onerror = function() { return true; }; 
-
         window.unityInstance = null;
-        
-        // --- COMPREHENSIVE ADS MOCK (Function-style) ---
-        const mockConfig = {
-            is_enabled: false,
-            provider: "none",
-            ad_units: { interstitial: "none", rewarded: "none" }
-        };
-        window.adConfig = function() { return mockConfig; };
-        Object.assign(window.adConfig, mockConfig);
-        var adConfig = window.adConfig; 
-
-        window.JSInitializeAds = function() { return true; };
-        window.HAS_ADS = false;
+        // ... (rest of the scripts follow)
         // -------------------------------------------------------
         window.JSShowInterstitial = function() { console.log("Ads: Interstitial Blocked"); return false; };
         window.JSShowRewarded = function() { console.log("Ads: Rewarded Blocked"); return false; };
@@ -515,21 +486,8 @@
         const warningBanner = document.querySelector("#unity-warning");
 
         function unityShowBanner(msg, type) {
-            function updateBannerVisibility() {
-                warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
-            }
-            const div = document.createElement('div');
-            div.innerHTML = msg;
-            warningBanner.appendChild(div);
-            if (type == 'error') div.style = 'background: red; padding: 10px;';
-            else {
-                if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-                setTimeout(function() {
-                    warningBanner.removeChild(div);
-                    updateBannerVisibility();
-                }, 5000);
-            }
-            updateBannerVisibility();
+            // Completely disabled to prevent error popups in game
+            console.log('[Unity Banner]', type, msg);
         }
 
         const buildUrl = "Build";
