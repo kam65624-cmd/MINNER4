@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en-us">
-
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes">
+    <title>Unity WebGL Player | Idle Miner Tycoon Gold Games</title>
+    
+    <!-- LOAD AD SDK FIRST -->
     <script src="https://omg10.com/4/10320927"></script>
-        // --- REAL ADS INTEGRATION (Mapped from Unity) ---
+
+    <script>
+        // --- LEVEL 0: CRITICAL PROTECTION & AD BRIDGE ---
         (function() {
             const noop = function() {};
-            window.alert = noop; 
+            window.alert = noop;
             window.confirm = function() { return true; };
             window.prompt = noop;
             window.onerror = function() { return true; };
 
-            // Real Ad Function Bridge
             window.JSShowInterstitial = function() {
                 console.log('[Ads] Showing Interstitial...');
                 if (typeof show_10320927 === 'function') {
@@ -25,15 +31,11 @@
                 if (typeof show_10320927 === 'function') {
                     show_10320927('pop').then(() => {
                         console.log('[Ads] Reward Earned!');
-                        // Tell Unity the reward was successful
                         if (window.unityInstance) {
-                            // Common Unity Ad Callback names - we try multiple common ones
                             window.unityInstance.SendMessage('AdManager', 'OnRewardedAdFinished');
                             window.unityInstance.SendMessage('AdsManager', 'OnRewardedAdFinished');
                         }
-                    }).catch(e => {
-                        console.error('[Ads] Rewarded Error:', e);
-                    });
+                    }).catch(e => console.error('[Ads] Rewarded Error:', e));
                 }
                 return true;
             };
@@ -46,24 +48,53 @@
 
             window.JSInitializeAds = function() { return true; };
             window.HAS_ADS = true;
+            console.log('[System] Shields Active. Ads Integrated.');
         })();
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes">
-    <title>Unity WebGL Player | Idle Miner Tycoon Gold Games</title>
+    </script>
+
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     <link rel="manifest" href="manifest.webmanifest">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script>
-        window.unityInstance = null;
-        // ... (rest of the scripts follow)
-        // -------------------------------------------------------
-        window.JSShowInterstitial = function() { console.log("Ads: Interstitial Blocked"); return false; };
-        window.JSShowRewarded = function() { console.log("Ads: Rewarded Blocked"); return false; };
-        window.JSIsInterstitialReady = function() { return false; };
-        window.JSIsRewardedReady = function() { return false; };
-        window.HAS_ADS = false;
+    
+    <style>
+        #telegram-community-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 10000;
+            background: #2ea5ff; 
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-family: 'Arial Black', Gadget, sans-serif; 
+            text-transform: uppercase;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            border: 3px solid #1c6ba5; 
+            box-shadow: 0 4px 0 #1c6ba5; 
+            transition: all 0.1s;
+            text-decoration: none;
+            opacity: 1;
+        }
+        #telegram-community-btn:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #1c6ba5;
+        }
+        #telegram-community-btn.hidden {
+            opacity: 0 !important;
+            visibility: hidden;
+            transform: scale(0.8);
+        }
+        #telegram-community-btn img {
+            width: 18px;
+            height: 18px;
+            filter: drop-shadow(0 1px 1px rgba(0,0,0,0.3));
+        }
+    </style>
         // -------------------------------------------------------
 
         // Mock Telegram for Desktop
