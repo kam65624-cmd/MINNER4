@@ -536,6 +536,41 @@
             document.getElementsByTagName('head')[0].appendChild(meta);
         }
 
+        // ======= PORTRAIT SIZE FIX (runs BEFORE Unity reads canvas) =======
+        (function() {
+            const W = window.innerWidth;
+            const H = window.innerHeight;
+            let cW, cH;
+
+            if (H >= W) {
+                // Already portrait (mobile) - fill screen
+                cW = W; cH = H;
+            } else {
+                // Landscape (desktop/tablet) - fit portrait 9:16 in height
+                cH = H;
+                cW = Math.round(H * 9 / 16);
+                if (cW > W) { cW = W; cH = Math.round(W * 16 / 9); }
+            }
+
+            // Apply to container
+            container.style.position   = 'fixed';
+            container.style.top        = '0';
+            container.style.left       = '0';
+            container.style.width      = '100vw';
+            container.style.height     = '100vh';
+            container.style.display    = 'flex';
+            container.style.justifyContent = 'center';
+            container.style.alignItems = 'center';
+            container.style.background = '#000';
+
+            // Apply pixel dimensions to canvas so Unity reads them correctly
+            canvas.style.width  = cW + 'px';
+            canvas.style.height = cH + 'px';
+            canvas.width  = cW;
+            canvas.height = cH;
+        })();
+        // ===================================================================
+
         canvas.style.background = "url('" + buildUrl + "/70e81ac5f60cb37764cbe100018c562a.jpg') center / cover";
 
         const script = document.createElement("script");
@@ -547,11 +582,6 @@
                 window.unityInstance = instance;
                 loadingBar.style.display = "none";
                 if (spinner) spinner.style.display = "none";
-                
-                // Tell Unity to resize itself to fill the container
-                setTimeout(() => {
-                    window.dispatchEvent(new Event('resize'));
-                }, 100);
 
                 // Final hide and save status once game is ready
                 const btn = document.getElementById("telegram-community-btn");
@@ -560,7 +590,6 @@
                     localStorage.setItem('has_joined_community', 'true');
                 }
             }).catch((message) => {
-                // Silently log error - DO NOT show alert to user
                 console.error('[Unity Error]', message);
             });
         };
